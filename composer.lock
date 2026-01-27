@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "34c60bb1d922b16081f8227df24d7fa1",
+    "content-hash": "d4f642662df7b785b1e3799e294f8877",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1225,16 +1225,16 @@
         },
         {
             "name": "hasinhayder/tyro-dashboard",
-            "version": "v1.4.2",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasinhayder/tyro-dashboard.git",
-                "reference": "74ac4cebc4f218e4177707b20addfc4f6e5f093f"
+                "reference": "7dce6b91997c56f9f129aba927ddca347df055a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasinhayder/tyro-dashboard/zipball/74ac4cebc4f218e4177707b20addfc4f6e5f093f",
-                "reference": "74ac4cebc4f218e4177707b20addfc4f6e5f093f",
+                "url": "https://api.github.com/repos/hasinhayder/tyro-dashboard/zipball/7dce6b91997c56f9f129aba927ddca347df055a3",
+                "reference": "7dce6b91997c56f9f129aba927ddca347df055a3",
                 "shasum": ""
             },
             "require": {
@@ -1281,9 +1281,9 @@
             ],
             "support": {
                 "issues": "https://github.com/hasinhayder/tyro-dashboard/issues",
-                "source": "https://github.com/hasinhayder/tyro-dashboard/tree/v1.4.2"
+                "source": "https://github.com/hasinhayder/tyro-dashboard/tree/v1.5.0"
             },
-            "time": "2026-01-23T11:18:37+00:00"
+            "time": "2026-01-27T09:55:35+00:00"
         },
         {
             "name": "hasinhayder/tyro-login",

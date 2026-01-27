@@ -158,6 +158,17 @@ return [
         //         'is_published' => ['type' => 'boolean', 'label' => 'Published'],
         //     ],
         // ],
+
+        'posts' => [
+            'model' => 'App\Models\Blog',
+            'title' => 'Blogs',
+            'fields' => [
+                'name' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
+                'price' => ['type' => 'number', 'label' => 'Price', 'rules' => 'required'],
+                'description' => ['type' => 'richtext', 'label' => 'description', 'rules' => 'required'],
+                'status' => ['type' => 'select', 'label' => 'Status', 'rules' => 'required', 'options'=> ['active', 'deactive']],
+            ],
+        ],
     ],
 
     /*
