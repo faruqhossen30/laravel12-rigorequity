@@ -60,7 +60,7 @@
                         @endif
                         @endforeach
                     </div>
-                    
+
                 </div>
 
 
@@ -78,6 +78,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th data-col="1">S.N</th>
                     @foreach($config['fields'] as $key => $field)
                     @if(!($field['hide_in_index'] ?? false))
                     <th data-col="{{ $key }}">{{ $field['label'] }}</th>
@@ -89,6 +90,9 @@
             <tbody>
                 @foreach($items as $item)
                 <tr>
+                    <td>
+                        {{ ($items->currentPage() - 1) * $items->perPage() + $loop->iteration }}
+                    </td>
                     @foreach($config['fields'] as $key => $field)
                     @if(!($field['hide_in_index'] ?? false))
                     <td data-col="{{ $key }}">

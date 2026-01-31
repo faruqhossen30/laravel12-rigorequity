@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::middleware(['auth', 'tyro'])->prefix('dashboard')->group(function () {
-    // Route::tyroResource('blogs', BlogController::class);
-});
+Route::get('contact', [ContactController::class, 'contactPage']);
+Route::get('about', [PageController::class, 'aboutPage']);
+Route::get('community-impact', [PageController::class, 'communityImpactPage']);
+Route::get('news', [NewsController::class, 'index'])->name('news.index');
+Route::get('news/{slug}', [NewsController::class, 'show'])->name('news.show');

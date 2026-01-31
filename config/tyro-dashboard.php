@@ -158,6 +158,34 @@ return [
         //         'is_published' => ['type' => 'boolean', 'label' => 'Published'],
         //     ],
         // ],
+        'Categories' => [
+            'model' => 'App\Models\Category',
+            'title' => 'Category',
+            'fields' => [
+                'name' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
+                'slug' => ['type' => 'text', 'label' => 'Slug'],
+            ],
+        ],
+        'News' => [
+            'model' => 'App\Models\News',
+            'title' => 'News',
+            'fields' => [
+                'title' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
+                'category_id' => [
+                    'type' => 'select',
+                    'label' => 'Category',
+                    'relationship' => 'category', // Name of the relationship method in Post model
+                    'option_label' => 'name',
+                ],
+                'thumbnail' => ['type' => 'file', 'label' => 'Thumbnail', 'rules' => 'nullable'],
+                'description' => ['type' => 'richtext', 'label' => 'Description', 'rules' => 'required'],
+                'status' => [
+                    'type' => 'boolean',
+                    'label' => 'Active',
+                    'rules' => 'nullable',
+                ],
+            ],
+        ],
 
         'posts' => [
             'model' => 'App\Models\Blog',
@@ -166,7 +194,7 @@ return [
                 'name' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
                 'price' => ['type' => 'number', 'label' => 'Price', 'rules' => 'required'],
                 'description' => ['type' => 'richtext', 'label' => 'description', 'rules' => 'required'],
-                'status' => ['type' => 'select', 'label' => 'Status', 'rules' => 'required', 'options'=> ['active', 'deactive']],
+                'status' => ['type' => 'select', 'label' => 'Status', 'rules' => 'required', 'options' => ['active', 'deactive']],
             ],
         ],
     ],
