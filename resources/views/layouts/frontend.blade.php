@@ -98,11 +98,25 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="10" y2="22"/><line x1="10" x2="10" y1="10" y2="22"/><line x1="14" x2="14" y1="10" y2="22"/><line x1="18" x2="18" y1="10" y2="22"/><polygon points="12 2 20 7 4 7"/></svg>
                     Public Sector
                 </a>
-                <div class="relative group">
+                <div class="relative group h-full flex items-center">
                     <button class="flex items-center gap-1 transition-colors hover:text-primary focus:outline-none">
                         About
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 ease-out translate-y-2 group-hover:translate-y-0">
+                        <div class="bg-background border border-border rounded-md shadow-lg overflow-hidden py-1">
+                            <a href="/about" class="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
+                                About Us
+                            </a>
+                            <a href="/community-impact" class="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
+                                Community Impact
+                            </a>
+                            <a href="/news" class="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
+                                Insight & News
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </nav>
 

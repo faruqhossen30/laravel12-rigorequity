@@ -1,144 +1,209 @@
 @extends('layouts.frontend')
 
-@section('title', 'Community Impact - Rigorequity')
+@section('title', 'Community Impact - Rigor Equity')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden py-12 md:py-24 lg:py-32 bg-muted/30">
-        <div class="container mx-auto px-4 flex flex-col items-center text-center space-y-8">
-            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
-                Social Responsibility
+<!-- Hero Section -->
+<div class="relative w-full h-[600px] flex items-center justify-center bg-black text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <!-- Image of diverse community/people -->
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2069&auto=format&fit=crop" alt="Community Impact" class="w-full h-full object-cover opacity-60">
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">Community Impact</h1>
+        <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 font-light">
+            Developing affordable housing that honors dignity, expands opportunity, and creates lasting value for entire communities.
+        </p>
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 bg-[#431499] text-white font-medium rounded-md hover:bg-[#35107a] transition-colors duration-200">
+            Partner With Us
+        </a>
+    </div>
+</div>
+
+<!-- Stats Bar -->
+<div class="w-full bg-[#340c7f] text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-4">
+                <div class="text-4xl md:text-5xl font-bold mb-2">50+</div>
+                <div class="text-sm md:text-base text-white/80 font-medium uppercase tracking-wide">Affordable Units Delivered</div>
             </div>
-            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Investing in <span class="text-primary">People</span> and <span class="text-primary">Places</span>
-            </h1>
-            <p class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-                We believe real estate is more than just assets; it's about the communities we build. Our commitment goes beyond returns to creating lasting positive change.
+            <div class="p-4">
+                <div class="text-4xl md:text-5xl font-bold mb-2">15</div>
+                <div class="text-sm md:text-base text-white/80 font-medium uppercase tracking-wide">Communities Served</div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl md:text-5xl font-bold mb-2">100+</div>
+                <div class="text-sm md:text-base text-white/80 font-medium uppercase tracking-wide">Local Jobs Created</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mission Section -->
+<div class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Affordable Housing Mission</h2>
+            <p class="text-gray-600 leading-relaxed">
+                At Rigor Equity, we believe everyone deserves access to quality housing. We're committed to developing and preserving affordable residential communities that strengthen neighborhoods and create opportunity.
             </p>
         </div>
-    </section>
 
-    <!-- Impact Metrics -->
-    <section class="container mx-auto py-12 px-4 -mt-8">
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 rounded-xl border bg-card p-8 shadow-lg text-card-foreground">
-            <div class="flex flex-col items-center justify-center p-4 text-center space-y-2 border-b sm:border-b-0 sm:border-r border-border last:border-0">
-                <span class="text-4xl font-bold tracking-tight">1,200+</span>
-                <span class="text-sm font-medium text-muted-foreground">Affordable Homes Created</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">Affordable Housing Access</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Creating quality housing options that are financially accessible to working families and underserved communities.
+                </p>
             </div>
-            <div class="flex flex-col items-center justify-center p-4 text-center space-y-2 border-b sm:border-b-0 sm:border-r border-border last:border-0">
-                <span class="text-4xl font-bold tracking-tight">500+</span>
-                <span class="text-sm font-medium text-muted-foreground">Local Jobs Supported</span>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">Community Partnerships</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Collaborating with local organizations, municipalities, and residents to address housing needs holistically.
+                </p>
             </div>
-            <div class="flex flex-col items-center justify-center p-4 text-center space-y-2 last:border-0">
-                <span class="text-4xl font-bold tracking-tight">$25M</span>
-                <span class="text-sm font-medium text-muted-foreground">Community Reinvestment</span>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">Quality of Life</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Designing and building homes that promote dignity, safety, and long-term community well-being.
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">Economic Opportunity</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Supporting local economic development through job creation and workforce training in construction trades.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Our Pillars -->
-    <section class="container mx-auto py-12 md:py-24 px-4 space-y-12">
-        <div class="text-center space-y-4 max-w-[58rem] mx-auto">
-            <h2 class="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Pillars of Impact</h2>
-            <p class="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-                Our strategy focuses on three key areas where we can drive the most significant change.
-            </p>
-        </div>
-
-        <div class="grid gap-8 md:grid-cols-3">
-            <!-- Pillar 1 -->
-            <div class="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md">
-                <div class="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <h3 class="text-xl font-bold">Housing Accessibility</h3>
-                <p class="text-muted-foreground flex-1">
-                    We prioritize developments that include affordable housing units, ensuring that essential workers and families can live in the communities they serve.
+<!-- How We Make a Difference Section -->
+<div class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">How We Make a Difference</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                    Our approach to affordable housing goes beyond compliance with regulatory requirements. We focus on creating vibrant, well-designed communities that residents are proud to call home.
                 </p>
-                <ul class="space-y-2 text-sm text-muted-foreground">
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Mixed-income developments</li>
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Rent stabilization programs</li>
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> First-time buyer assistance</li>
-                </ul>
-            </div>
-
-            <!-- Pillar 2 -->
-            <div class="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md">
-                <div class="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
-                </div>
-                <h3 class="text-xl font-bold">Sustainability</h3>
-                <p class="text-muted-foreground flex-1">
-                    Reducing our carbon footprint through green building practices, energy-efficient retrofits, and smart building technologies.
+                <p class="text-gray-600 mb-8 leading-relaxed text-sm">
+                    Through innovative financing structures, cost-efficient construction methods, and strategic partnerships with municipalities and housing authorities, we deliver projects that balance financial sustainability with deep social impact.
                 </p>
-                <ul class="space-y-2 text-sm text-muted-foreground">
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> LEED certified construction</li>
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Solar energy integration</li>
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Water conservation systems</li>
-                </ul>
-            </div>
 
-            <!-- Pillar 3 -->
-            <div class="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md">
-                <div class="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <h3 class="text-xl font-bold">Community Growth</h3>
-                <p class="text-muted-foreground flex-1">
-                    Partnering with local businesses and non-profits to foster economic growth and provide opportunities for residents.
-                </p>
-                <ul class="space-y-2 text-sm text-muted-foreground">
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Local hiring mandates</li>
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Small business grants</li>
-                    <li class="flex items-center"><span class="mr-2 text-primary">•</span> Youth mentorship programs</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Highlight Section -->
-    <section class="bg-muted/50 py-12 md:py-24">
-        <div class="container mx-auto px-4">
-            <div class="grid gap-12 lg:grid-cols-2 items-center">
-                <div class="relative overflow-hidden rounded-xl border bg-background shadow-lg">
-                    <!-- Abstract representation of a community center or building -->
-                     <svg class="w-full h-auto aspect-video text-muted-foreground/10 bg-muted" viewBox="0 0 400 300" fill="currentColor">
-                        <rect width="400" height="300" fill="currentColor"/>
-                        <path d="M50 250 L50 100 L200 20 L350 100 L350 250 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.2"/>
-                        <rect x="100" y="150" width="50" height="50" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.2"/>
-                        <rect x="250" y="150" width="50" height="50" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.2"/>
-                        <rect x="175" y="180" width="50" height="70" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.2"/>
-                     </svg>
-                     <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="bg-background/80 backdrop-blur px-4 py-2 rounded-lg border shadow font-mono text-xs">Project Spotlight: The Horizon Center</span>
-                     </div>
-                </div>
                 <div class="space-y-6">
-                    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">The Horizon Initiative</h2>
-                    <p class="text-lg text-muted-foreground">
-                        Last year, we launched the Horizon Initiative in downtown Chicago. By transforming an underutilized industrial lot into a mixed-use community hub, we provided 150 new affordable housing units and 20,000 sq ft of retail space dedicated to local minority-owned businesses.
-                    </p>
-                    <blockquote class="border-l-4 border-primary pl-4 italic text-muted-foreground">
-                        "Rigorequity didn't just build apartments; they built a foundation for our neighborhood's future."
-                    </blockquote>
-                    <div>
-                        <a href="/contact" class="text-primary font-medium hover:underline inline-flex items-center">
-                            Learn more about our projects <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </a>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-[#340c7f] shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 mb-1">Quality-First Design</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Every unit is designed with the same attention to detail, materials, and amenities as market-rate housing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-[#340c7f] shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 mb-1">Long-Term Affordability</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                We structure projects with extended affordability commitments, ensuring communities benefit for decades.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="w-full md:w-1/2">
+                <div class="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2065&auto=format&fit=crop" alt="Residential Community Aerial View" class="w-full h-full object-cover">
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- CTA -->
-    <section class="container mx-auto py-12 md:py-24 px-4 text-center">
-        <h2 class="font-bold text-3xl sm:text-4xl mb-4">Make an Impact With Us</h2>
-        <p class="max-w-[42rem] mx-auto text-muted-foreground mb-8 text-lg">
-            Whether you're an investor looking for ethical returns or a community leader seeking partnership, we want to hear from you.
+<!-- Key Initiatives Section -->
+<div class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Key Initiatives</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M13 21V12"/></svg>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-3">Workforce Housing Development</h3>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Building mixed-income residential communities that serve teachers, healthcare workers, first responders, and other essential professionals who are often priced out of urban markets.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-3">Public-Private Partnerships</h3>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Partnering with housing authorities and municipalities to deliver affordable housing projects funded through Low-Income Housing Tax Credits (LIHTC), HUD programs, and other public financing mechanisms.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <div class="w-10 h-10 bg-[#340c7f] rounded-lg flex items-center justify-center text-white mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-3">Community Engagement</h3>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Hosting community meetings and working sessions to ensure our developments reflect the needs and aspirations of the neighborhoods we serve.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer CTA -->
+<div class="py-24 bg-gray-100 text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Creating Opportunity Through Housing</h2>
+        <p class="text-gray-600 mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
+            Housing stability is the foundation for economic mobility, educational achievement, and health outcomes. By delivering high-quality affordable housing, we're investing in the long-term success of individuals, families, and entire communities.
         </p>
-        <a href="/contact" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-11 px-8">
-            Get In Touch
-        </a>
-    </section>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/public-sector" class="inline-flex items-center justify-center px-8 py-3 bg-[#340c7f] text-white font-medium rounded-md hover:bg-[#2a0a66] transition-colors duration-200">
+                Public Sector Partnerships
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 bg-white text-gray-900 border border-gray-300 font-medium rounded-md hover:bg-gray-50 transition-colors duration-200">
+                Get In Touch
+            </a>
+        </div>
+    </div>
+</div>
 @endsection
