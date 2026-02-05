@@ -15,6 +15,8 @@
 
     @include('tyro-dashboard::partials.styles')
     @stack('styles')
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>

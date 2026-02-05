@@ -31,6 +31,40 @@
         <!-- Admin Menu -->
         <div class="sidebar-section">
             <div class="sidebar-section-title">Administration</div>
+            <a href="{{ route('admin.contacts.index') }}" class="sidebar-link {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Contacts
+            </a>
+            <div class="sidebar-group {{ request()->routeIs('settings.*') ? 'active' : '' }}" x-data="{ open: {{ request()->routeIs('settings.*') ? 'true' : 'false' }} }">
+                <button @click="open = !open" class="sidebar-link w-full justify-between" :class="{ 'active': open }">
+                    <div class="flex items-center gap-3">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Settings
+                    </div>
+                    <svg class="w-4 h-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                    <a href="{{ route('settings.index') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.index') ? 'active' : '' }}">
+                        General Settings
+                    </a>
+                    <a href="{{ route('settings.homepage') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.homepage') ? 'active' : '' }}">
+                        Home Page Setting
+                    </a>
+                    <a href="{{ route('settings.about') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.about') ? 'active' : '' }}">
+                        About Page Setting
+                    </a>
+                    <a href="{{ route('settings.contact') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.contact') ? 'active' : '' }}">
+                        Contact Page Setting
+                    </a>
+                </div>
+            </div>
             <a href="{{ route('tyro-dashboard.users.index') }}" class="sidebar-link {{ request()->routeIs('tyro-dashboard.users.*') ? 'active' : '' }}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -82,7 +116,7 @@
                         }
                     }
                 @endphp
-                
+
                 @if($canAccess)
                 <a href="{{ route('tyro-dashboard.resources.index', $key) }}" class="sidebar-link {{ request()->is('*resources/'.$key.'*') ? 'active' : '' }}">
                     @if(isset($resource['icon']))

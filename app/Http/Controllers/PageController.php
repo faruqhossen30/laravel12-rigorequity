@@ -2,19 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Setting;
 
 class PageController extends Controller
 {
-    public function aboutPage(){
-        return view('about-page');
+    public function aboutPage()
+    {
+        $settings = Setting::where('group', 'like', 'about_%')
+            ->pluck('value', 'key')
+            ->toArray();
+
+        return view('about-page', compact('settings'));
     }
 
-    public function communityImpactPage(){
+    public function communityImpactPage()
+    {
         return view('community-impact');
     }
 
-    public function investmentManagementPage(){
+    public function investmentManagementPage()
+    {
         return view('investment-management');
     }
 
@@ -28,7 +35,8 @@ class PageController extends Controller
         return view('public-sector');
     }
 
-    public function developmentPage(){
+    public function developmentPage()
+    {
         return view('development');
     }
 }

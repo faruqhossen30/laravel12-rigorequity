@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class FeatureClient extends Model
 {
     protected $fillable = [
         'name',
-        'price',
-        'status',
-        'description',
+        'logo',
     ];
 }

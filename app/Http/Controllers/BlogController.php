@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -21,20 +20,20 @@ class BlogController extends Controller
                 'type' => 'text',
                 'label' => 'Product Name',
                 'required' => true,
-                'searchable' => true
+                'searchable' => true,
             ],
             'price' => [
                 'type' => 'number',
                 'prefix' => '$',
-                'required' => true
+                'required' => true,
             ],
             'status' => [
                 'type' => 'select',
-                'options' => ['active', 'draft', 'archived']
+                'options' => ['active', 'draft', 'archived'],
             ],
             'description' => [
-                'type' => 'richtext'
-            ]
+                'type' => 'richtext',
+            ],
         ];
     }
 }

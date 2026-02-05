@@ -13,7 +13,7 @@ class News extends Model
         'category_id',
         'thumbnail',
         'description',
-        'status'
+        'status',
     ];
 
     protected static function boot()

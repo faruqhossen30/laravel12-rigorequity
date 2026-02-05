@@ -9,7 +9,7 @@ class Category extends Model
 {
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
     ];
 
     protected static function boot()

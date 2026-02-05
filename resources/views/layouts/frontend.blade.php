@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Rigorequity - Modern Equity Management')</title>
+    <meta name="description" content="@yield('meta_description', 'Rigorequity - Modern Equity Management')">
+    <meta name="keywords" content="@yield('meta_keywords', 'real estate, equity, management')">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -121,8 +123,13 @@
             </nav>
 
             <div class="flex items-center gap-4">
-                <a href="/contact" class="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#3b0764] text-white hover:bg-[#3b0764]/90 h-10 px-6 shadow-md">
-                    Contact Us
+                <a href="/contact" class="group relative inline-flex items-center justify-center rounded-full text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-[#3b0764] via-[#6d28d9] to-[#3b0764] bg-[length:200%_auto] hover:bg-right text-white h-11 px-8 shadow-lg hover:shadow-[#3b0764]/50 hover:-translate-y-0.5 overflow-hidden">
+                    <div class="absolute inset-0 -translate-x-full animate-shine bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <span class="relative z-10">Contact Us</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 ml-2 animate-wiggle transition-transform duration-300 group-hover:translate-x-1 group-hover:animate-none">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -132,16 +139,82 @@
         @yield('content')
     </main>
 
-    <footer class="border-t border-border bg-background py-6 md:py-0">
-        <div class="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4">
-            <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-                <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
+    <footer class="border-t border-border bg-background/50 backdrop-blur-sm pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <a href="/" class="flex items-center gap-2">
+                        <img src="{{ asset('assets/img/rigorequity.avif') }}" alt="Rigorequity" class="h-8">
+                        <span class="text-xl font-bold tracking-tight">Rigorequity</span>
+                    </a>
+                    <p class="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                        Modern Equity Management solutions for the next generation of real estate investment.
+                    </p>
+                    <div class="flex gap-4">
+                        <!-- Social Icons -->
+                        <a href="#" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
+                             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                        </a>
+                        <a href="#" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.132 1.95c-2.33 0-2.615.01-3.61.056-.995.045-1.534.208-1.9.35-.476.186-.815.409-1.17.765-.356.356-.58.695-.765 1.171-.143.366-.305.905-.35 1.9-.046.995-.056 1.28-.056 3.61v.625c0 2.33.01 2.615.056 3.61.045.995.208 1.534.35 1.9.186.476.409.815.765 1.17.356.356.695.58 1.171.765.366.143.905.305 1.9.35.995.046 1.28.056 3.61.056h.625c2.33 0 2.615-.01 3.61-.056.995-.045 1.534-.208 1.9-.35.476-.186.815-.409 1.17-.765.356-.356.58-.695.765-1.171.143-.366.305-.905.35-1.9.046-.995.056-1.28.056-3.61v-.625c0-2.33-.01-2.615-.056-3.61-.045-.995-.208-1.534-.35-1.9-.186-.476-.409-.815-.765-1.17-.356-.356-.695-.58-1.171-.765-.366-.143-.905-.305-1.9-.35-.995-.046-1.28-.056-3.61-.056h-.625zm-3.155 4.637a5.32 5.32 0 115.32 5.32 5.32 5.32 0 01-5.32-5.32zm1.95 0a3.37 3.37 0 103.37-3.37 3.37 3.37 0 00-3.37 3.37zm5.954-4.225a1.29 1.29 0 11-1.29 1.29 1.29 1.29 0 011.29-1.29z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold text-foreground mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/investment-management" class="text-sm text-muted-foreground hover:text-primary transition-colors">Investment Management</a></li>
+                        <li><a href="/construction" class="text-sm text-muted-foreground hover:text-primary transition-colors">Construction</a></li>
+                        <li><a href="/development" class="text-sm text-muted-foreground hover:text-primary transition-colors">Development</a></li>
+                        <li><a href="/public-sector" class="text-sm text-muted-foreground hover:text-primary transition-colors">Public Sector</a></li>
+                        <li><a href="/about" class="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-semibold text-foreground mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                            <svg class="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            <span>1234 Investment Blvd, Suite 100<br>New York, NY 10001</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-muted-foreground">
+                            <svg class="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            <a href="mailto:info@rigorequity.com" class="hover:text-primary transition-colors">info@rigorequity.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-muted-foreground">
+                            <svg class="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            <a href="tel:+1234567890" class="hover:text-primary transition-colors">+1 (234) 567-890</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Map -->
+                <div class="space-y-4">
+                     <h3 class="font-semibold text-foreground mb-4">Our Location</h3>
+                     <div class="h-40 w-full rounded-lg overflow-hidden border border-border bg-muted relative group">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1622207901399!5m2!1sen!2sus" 
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="grayscale hover:grayscale-0 transition-all duration-500"></iframe>
+                     </div>
+                </div>
+            </div>
+
+            <div class="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-muted-foreground text-center md:text-left">
                     &copy; {{ date('Y') }} Rigorequity Inc. All rights reserved.
                 </p>
-            </div>
-             <div class="flex gap-4">
-                <a href="#" class="text-sm font-medium underline underline-offset-4 text-muted-foreground hover:text-foreground">Terms</a>
-                <a href="#" class="text-sm font-medium underline underline-offset-4 text-muted-foreground hover:text-foreground">Privacy</a>
+                <div class="flex gap-6">
+                    <a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>

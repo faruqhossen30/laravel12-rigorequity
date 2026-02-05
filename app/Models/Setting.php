@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Setting extends Model
 {
     protected $fillable = [
-        'name',
-        'price',
-        'status',
-        'description',
+        'key',
+        'value',
+        'group',
+        'label',
+        'type',
     ];
 }
