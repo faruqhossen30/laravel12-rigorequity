@@ -29,7 +29,3 @@ Route::get('public-sector', [PageController::class, 'publicSectorPage']);
 Route::get('development', [PageController::class, 'developmentPage']);
 Route::get('news', [NewsController::class, 'index'])->name('news.index');
 Route::get('news/{slug}', [NewsController::class, 'show'])->name('news.show');
-
-Route::get('login', function () {
-    return redirect()->route('tyro-login.login');
-})->name('login');
