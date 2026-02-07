@@ -32,8 +32,8 @@
     <!-- Hero Section -->
 
     <div class="relative h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-hidden"><iframe class="absolute inset-0 w-full h-full pointer-events-none"
-            src="https://www.youtube.com/embed/QkvkbP_JNlg?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=QkvkbP_JNlg&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;enablejsapi=1"
-            title="Construction Video" allow="autoplay; encrypted-media" allowfullscreen=""
+            src="https://www.youtube.com/embed/QkvkbP_JNlg?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=QkvkbP_JNlg&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;enablejsapi=1&amp;origin={{ request()->getSchemeAndHttpHost() }}"
+            title="Construction Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""
             style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.5s ease-in-out;"></iframe>
         <div class="absolute inset-0 pointer-events-none" style="box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 100px 60px inset, rgba(0, 0, 0, 0.7) 0px 0px 60px 30px inset;"></div>
         <div class="absolute inset-0 bg-black/40"></div>

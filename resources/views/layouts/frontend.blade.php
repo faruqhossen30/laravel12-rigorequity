@@ -16,8 +16,8 @@
 
     <!-- Theme Toggle Script -->
     <script>
-        // Check for saved theme preference or system preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Check for saved theme preference, otherwise default to light
+        if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark')
         } else {
             document.documentElement.classList.remove('dark')
@@ -25,50 +25,7 @@
     </script>
 
     <!-- Styles -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <!-- Fallback if build not ready - minimalist fallback -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                darkMode: 'class',
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            sans: ['Instrument Sans', 'sans-serif'],
-                        },
-                        colors: {
-                            background: 'var(--background)',
-                            foreground: 'var(--foreground)',
-                            card: 'var(--card)',
-                            'card-foreground': 'var(--card-foreground)',
-                            popover: 'var(--popover)',
-                            'popover-foreground': 'var(--popover-foreground)',
-                            primary: 'var(--primary)',
-                            'primary-foreground': 'var(--primary-foreground)',
-                            secondary: 'var(--secondary)',
-                            'secondary-foreground': 'var(--secondary-foreground)',
-                            muted: 'var(--muted)',
-                            'muted-foreground': 'var(--muted-foreground)',
-                            accent: 'var(--accent)',
-                            'accent-foreground': 'var(--accent-foreground)',
-                            destructive: 'var(--destructive)',
-                            'destructive-foreground': 'var(--destructive-foreground)',
-                            border: 'var(--border)',
-                            input: 'var(--input)',
-                            ring: 'var(--ring)',
-                        },
-                        borderRadius: {
-                            lg: 'var(--radius)',
-                            md: 'calc(var(--radius) - 2px)',
-                            sm: 'calc(var(--radius) - 4px)',
-                        },
-                    }
-                }
-            }
-        </script>
-    @endif
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
 <body class="bg-background text-foreground font-sans antialiased min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground">
