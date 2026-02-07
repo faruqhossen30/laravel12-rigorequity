@@ -18,18 +18,22 @@ class FaqSeeder extends Seeder
 
         $faqs = [
             [
+                'page'=>'home',
                 'question' => 'Property Management',
                 'answer' => 'Our property management services ensure your assets are well-maintained, tenants are satisfied, and operations run smoothly. We handle everything from maintenance to tenant relations.'
             ],
             [
+                'page'=>'home',
                 'question' => 'Asset Management',
                 'answer' => 'We provide strategic asset management to maximize the value of your real estate portfolio. Our approach focuses on long-term growth and risk mitigation.'
             ],
             [
+                'page'=>'home',
                 'question' => 'Financial Reporting & Compliance',
                 'answer' => 'Accurate and timely financial reporting is crucial. We ensure full compliance with regulatory standards and provide transparent financial insights.'
             ],
             [
+                'page'=>'home',
                 'question' => 'Tenant Services & Experience',
                 'answer' => 'We prioritize tenant satisfaction through exceptional service and community-building initiatives. Happy tenants lead to higher retention rates.'
             ],

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Setting;
 use Illuminate\Database\Seeder;
 
-class SettingSeeder extends Seeder
+class HomePageSettingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -39,7 +39,7 @@ class SettingSeeder extends Seeder
             // Homepage Hero
             [
                 'key' => 'homepage_hero_title',
-                'value' => 'Integrated Solutions.<br>Lasting Impact.',
+                'value' => 'Integrated Solutions.<br>Lasting Impact. Test',
                 'group' => 'homepage_hero',
                 'label' => 'Hero Title (Supports HTML)',
                 'type' => 'text',
@@ -50,27 +50,6 @@ class SettingSeeder extends Seeder
                 'group' => 'homepage_hero',
                 'label' => 'Hero Description',
                 'type' => 'richtext',
-            ],
-            [
-                'key' => 'homepage_hero_bg_image',
-                'value' => 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop',
-                'group' => 'homepage_hero',
-                'label' => 'Hero Background Image URL',
-                'type' => 'text',
-            ],
-            [
-                'key' => 'homepage_hero_button_text',
-                'value' => 'About Us',
-                'group' => 'homepage_hero',
-                'label' => 'Hero Button Text',
-                'type' => 'text',
-            ],
-            [
-                'key' => 'homepage_hero_button_link',
-                'value' => '/about',
-                'group' => 'homepage_hero',
-                'label' => 'Hero Button Link',
-                'type' => 'text',
             ],
 
             // Homepage Stats
@@ -118,13 +97,6 @@ class SettingSeeder extends Seeder
             ],
 
             // Homepage Services
-            [
-                'key' => 'homepage_services_title',
-                'value' => 'Vertically Integrated to Deliver Value',
-                'group' => 'homepage_services',
-                'label' => 'Services Section Title',
-                'type' => 'text',
-            ],
         ];
 
         foreach ($settings as $setting) {

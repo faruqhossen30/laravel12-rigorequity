@@ -30,26 +30,6 @@
 
 @section('content')
     <!-- Hero Section -->
-    {{-- <section class="relative h-[600px] flex items-center text-white">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-             <img src="{{ $settings['homepage_hero_bg_image'] ?? 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop' }}" alt="Construction Site" class="w-full h-full object-cover">
-             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">{!! $settings['homepage_hero_title'] ?? 'Integrated Solutions.<br>Lasting Impact.' !!}</h1>
-                <div class="text-lg md:text-xl text-gray-200 max-w-2xl mb-8 leading-relaxed richtext-content">
-                    {!! $settings['homepage_hero_description'] ?? 'Vertically integrated operator delivering end-to-end real estate solutions and building institutional-quality assets in overlooked urban submarkets.' !!}
-                </div>
-                <a href="{{ $settings['homepage_hero_button_link'] ?? '/about' }}" class="inline-flex items-center bg-[#340c7f] hover:bg-[#240066] text-white font-semibold py-3 px-8 rounded-md transition-colors">
-                    {{ $settings['homepage_hero_button_text'] ?? 'About Us' }} <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
-        </div>
-    </section> --}}
-
 
     <div class="relative h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-hidden"><iframe class="absolute inset-0 w-full h-full pointer-events-none"
             src="https://www.youtube.com/embed/QkvkbP_JNlg?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=QkvkbP_JNlg&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;enablejsapi=1"
@@ -59,9 +39,8 @@
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
             <div class="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl mb-4 text-white leading-tight">Integrated Solutions.<br>Lasting Impact.</h1>
-                <p class="text-lg md:text-xl lg:text-2xl mb-6 text-white/90">Vertically integrated operator delivering end-to-end real estate solutions and building
-                    institutional-quality assets in overlooked urban submarkets.</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl mb-4 text-white leading-tight">{!! $settings['homepage_hero_title'] ?? 'Integrated Solutions.<br>Lasting Impact.' !!}</h1>
+                <div class="text-lg md:text-xl lg:text-2xl mb-6 text-white/90">{!! $settings['homepage_hero_description'] ?? 'Vertically integrated operator delivering end-to-end real estate solutions and building institutional-quality assets in overlooked urban submarkets.' !!}</div>
                 <div class="flex flex-col sm:flex-row gap-4"><a href="/about"
                         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 bg-[#2e099a] text-white hover:bg-[#2e099a]/90 hover:scale-105 active:scale-95 transition-all duration-200 w-fit">About
                         Us<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -136,7 +115,7 @@
                 <div class="logo-track animate-scroll-logos">
                     @foreach ($featureClients as $client)
                         <div class="flex items-center justify-center flex-shrink-0 px-8 md:px-12">
-                            <img src="{{ asset('storage/'.$client->logo) }}" alt="{{ $client->name ?? 'Client' }}" class="h-8 md:h-10 w-auto">
+                            <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name ?? 'Client' }}" class="h-8 md:h-10 w-auto">
                         </div>
                     @endforeach
                 </div>
@@ -160,8 +139,7 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Investment Management</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Strategic capital deployment across value-add and opportunistic multifamily assets, delivering superior risk-adjusted
-                        returns.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">We manage real estate investments in Chicago to increase value through smart planning, careful oversight, and long-term growth strategies.</p>
                     <a href="/investment-management" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">Learn
                         more <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -180,8 +158,7 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Construction</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">End-to-end construction management from ground-up development to complex renovations, delivering quality on time and
-                        on budget.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">We plan and develop residential projects from start to finish, turning ideas into well-built communities.</p>
                     <a href="/construction" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">Explore
                         construction <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -239,31 +216,22 @@
                         development and management.
                     </p>
 
-                    <div class="space-y-6">
-                        <div class="border-b border-gray-200 pb-4">
-                            <button class="flex items-center justify-between w-full text-left font-bold text-gray-900 hover:text-[#340c7f] text-lg group">
-                                <span>Sustainability & Energy Efficiency</span>
-                                <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]">+</span>
-                            </button>
-                        </div>
-                        <div class="border-b border-gray-200 pb-4">
-                            <button class="flex items-center justify-between w-full text-left font-bold text-gray-900 hover:text-[#340c7f] text-lg group">
-                                <span>Advanced Energy Solutions</span>
-                                <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]">+</span>
-                            </button>
-                        </div>
-                        <div class="border-b border-gray-200 pb-4">
-                            <button class="flex items-center justify-between w-full text-left font-bold text-gray-900 hover:text-[#340c7f] text-lg group">
-                                <span>Construction Logistics Excellence</span>
-                                <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]">+</span>
-                            </button>
-                        </div>
-                        <div class="border-b border-gray-200 pb-4">
-                            <button class="flex items-center justify-between w-full text-left font-bold text-gray-900 hover:text-[#340c7f] text-lg group">
-                                <span>Technology & Innovation</span>
-                                <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]">+</span>
-                            </button>
-                        </div>
+                    <div class="space-y-6" x-data="{ active: null }">
+                        @foreach($faqs as $index => $faq)
+                            <div class="border-b border-gray-200 pb-4">
+                                <button @click="active = (active === {{ $index }} ? null : {{ $index }})"
+                                    class="flex items-center justify-between w-full text-left font-bold text-gray-900 hover:text-[#340c7f] text-lg group">
+                                    <span>{{ $faq->question }}</span>
+                                    <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]"
+                                        x-text="active === {{ $index }} ? '-' : '+'">+</span>
+                                </button>
+                                <div x-show="active === {{ $index }}" x-collapse>
+                                    <div class="pt-4 text-gray-600 leading-relaxed">
+                                        {!! $faq->answer !!}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="lg:w-1/2">
@@ -279,35 +247,9 @@
     </section>
 
     <!-- Operations Section -->
+    {{-- @include('inc.faq') --}}
     <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Operations & Asset Management</h2>
-                <p class="text-xl text-gray-600">Institutional quality operations across every aspect of the asset lifecycle.</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto space-y-4 mb-20">
-                @foreach($faqs as $faq)
-                <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                    <button @click="open = !open" class="w-full px-8 py-5 flex items-center justify-between text-left font-bold text-gray-900 hover:bg-gray-50 group">
-                        <div class="flex items-center gap-6">
-                            <div class="w-10 h-10 rounded bg-[#340c7f]/10 text-[#340c7f] flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                </svg>
-                            </div>
-                            <span class="text-lg">{{ $faq->question }}</span>
-                        </div>
-                        <span class="text-gray-400 text-2xl group-hover:text-[#340c7f]" x-text="open ? '-' : '+'">+</span>
-                    </button>
-                    <div x-show="open" x-transition class="px-8 pb-5 pl-24 text-gray-600">
-                        {!! $faq->answer !!}
-                    </div>
-                </div>
-                @endforeach
-            </div>
 
             <!-- Operations Stats -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
@@ -326,9 +268,8 @@
             </div>
         </div>
     </section>
-
     <!-- Upcoming Projects -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-white" x-data="{ activeProject: null }">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Upcoming Projects</h2>
@@ -336,101 +277,29 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
-                <!-- Project 1 -->
+                @foreach($projects as $project)
+                <!-- Project Card -->
                 <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
                     <div class="h-64 bg-gray-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2535&auto=format&fit=crop" alt="Project"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider">Under Construction</div>
-                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg flex items-center justify-between">
-                            <span class="text-[#340c7f] font-bold text-sm">Urban Syndicate</span>
-                            <span class="text-xs font-semibold bg-gray-100 px-2 py-1 rounded">Multifamily</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            <span>Chicago, IL</span>
-                        </div>
-                        <div class="grid grid-cols-3 gap-2 text-center text-xs border-t border-gray-100 pt-6">
-                            <div>
-                                <div class="font-bold text-gray-900 text-lg">24</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Units</div>
+                        @if($project->image)
+                            <img src="{{ Storage::url($project->image) }}" alt="{{ $project->title }}"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        @else
+                            <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                                <span class="text-gray-400">No Image</span>
                             </div>
-                            <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">$5.2M</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Value</div>
-                            </div>
-                            <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">18%</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Target IRR</div>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <button class="w-full py-2.5 border border-[#340c7f] text-[#340c7f] font-semibold rounded hover:bg-[#340c7f] hover:text-white transition-colors text-sm">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                        @endif
 
-                <!-- Project 2 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="h-64 bg-gray-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1460317442991-0ec2aa2498a2?q=80&w=2670&auto=format&fit=crop" alt="Project"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider">Leasing Now</div>
-                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg flex items-center justify-between">
-                            <span class="text-[#340c7f] font-bold text-sm">United Apartments</span>
-                            <span class="text-xs font-semibold bg-gray-100 px-2 py-1 rounded">Mixed Use</span>
+                        <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider">
+                            {{ $project->status }}
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            <span>Evanston, IL</span>
-                        </div>
-                        <div class="grid grid-cols-3 gap-2 text-center text-xs border-t border-gray-100 pt-6">
-                            <div>
-                                <div class="font-bold text-gray-900 text-lg">42</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Units</div>
-                            </div>
-                            <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">$12M</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Value</div>
-                            </div>
-                            <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">16%</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Target IRR</div>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <button class="w-full py-2.5 border border-[#340c7f] text-[#340c7f] font-semibold rounded hover:bg-[#340c7f] hover:text-white transition-colors text-sm">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project 3 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="h-64 bg-gray-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2670&auto=format&fit=crop" alt="Project"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider">Planning</div>
                         <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg flex items-center justify-between">
-                            <span class="text-[#340c7f] font-bold text-sm">E 53rd Pipeline</span>
-                            <span class="text-xs font-semibold bg-gray-100 px-2 py-1 rounded">Development</span>
+                            <span class="text-[#340c7f] font-bold text-sm">{{ $project->title }}</span>
+                            <span class="text-xs font-semibold bg-gray-100 px-2 py-1 rounded">{{ $project->type }}</span>
                         </div>
                     </div>
+
                     <div class="p-6">
                         <div class="flex items-center text-sm text-gray-500 mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -438,36 +307,131 @@
                                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
-                            <span>Hyde Park, Chicago</span>
+                            <span>{{ $project->location ?? 'Location N/A' }}</span>
                         </div>
+
                         <div class="grid grid-cols-3 gap-2 text-center text-xs border-t border-gray-100 pt-6">
                             <div>
-                                <div class="font-bold text-gray-900 text-lg">60</div>
+                                <div class="font-bold text-gray-900 text-lg">{{ $project->units ?? '-' }}</div>
                                 <div class="text-gray-500 uppercase tracking-wide text-[10px]">Units</div>
                             </div>
                             <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">$18M</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Value</div>
+                                <div class="font-bold text-gray-900 text-lg">{{ $project->sf ?? '-' }}</div>
+                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">SF</div>
                             </div>
                             <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">21%</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Target IRR</div>
+                                <div class="font-bold text-gray-900 text-lg">
+                                    {{ $project->completion_date ? $project->completion_date->format('Y') : '-' }}
+                                </div>
+                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Completion</div>
                             </div>
                         </div>
+
                         <div class="mt-6">
-                            <button class="w-full py-2.5 border border-[#340c7f] text-[#340c7f] font-semibold rounded hover:bg-[#340c7f] hover:text-white transition-colors text-sm">
+                            <button @click="activeProject = {{ json_encode($project) }}" class="block w-full text-center py-2.5 border border-[#340c7f] text-[#340c7f] font-semibold rounded hover:bg-[#340c7f] hover:text-white transition-colors text-sm">
                                 View Details
                             </button>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
 
             <div class="text-center">
-                <a href="/development"
+                <a href="{{ route('all-project') }}"
                     class="inline-block bg-[#340c7f] text-white font-semibold py-3 px-10 rounded-md hover:bg-[#240066] transition-colors shadow-lg hover:shadow-xl">
                     View All Projects
                 </a>
+            </div>
+
+            <!-- Project Details Modal -->
+            <div x-show="activeProject"
+                style="display: none;"
+                class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+                x-transition:enter="ease-out duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="ease-in duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0">
+
+                <!-- Backdrop -->
+                <div class="fixed inset-0 bg-black/60 transition-opacity backdrop-blur-sm" @click="activeProject = null"></div>
+
+                <!-- Modal Panel -->
+                <div class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all flex flex-col md:flex-row max-h-[90vh]"
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+
+                    <!-- Close Button -->
+                    <button @click="activeProject = null" class="absolute top-4 right-4 z-10 p-2 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white text-gray-600 hover:text-gray-900 transition-colors shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 18"/></svg>
+                    </button>
+
+                    <!-- Image Section (Left/Top) -->
+                    <div class="w-full md:w-1/2 bg-gray-100 relative h-64 md:h-auto">
+                        <template x-if="activeProject?.image_url">
+                            <img :src="activeProject.image_url" :alt="activeProject.title" class="w-full h-full object-cover">
+                        </template>
+                        <template x-if="!activeProject?.image_url">
+                            <div class="w-full h-full flex items-center justify-center text-gray-400 bg-gray-200">
+                                <span class="text-lg">No Image Available</span>
+                            </div>
+                        </template>
+                        <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-sm" x-text="activeProject?.status"></div>
+                    </div>
+
+                    <!-- Content Section (Right/Bottom) -->
+                    <div class="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto bg-white">
+                        <div class="mb-6">
+                            <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 mb-3" x-text="activeProject?.type"></span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight" x-text="activeProject?.title"></h3>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                                <span x-text="activeProject?.location || 'Location N/A'"></span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Units</div>
+                                <div class="font-bold text-gray-900 text-lg" x-text="activeProject?.units || '-'"></div>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Square Feet</div>
+                                <div class="font-bold text-gray-900 text-lg" x-text="activeProject?.sf || '-'"></div>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Completion</div>
+                                <div class="font-bold text-gray-900 text-lg" x-text="activeProject?.completion_date ? new Date(activeProject.completion_date).getFullYear() : '-'"></div>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Value</div>
+                                <div class="font-bold text-gray-900 text-lg" x-text="activeProject?.value || '-'"></div>
+                            </div>
+                        </div>
+
+                        <template x-if="activeProject?.partners && activeProject.partners.length > 0">
+                            <div class="border-t border-gray-100 pt-6">
+                                <h4 class="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Partners</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <template x-for="partner in activeProject.partners">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100" x-text="partner"></span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+
+                        <!-- Optional: Description Placeholder if model doesn't have it yet -->
+                        <div class="mt-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-6">
+                            <p>This project represents our commitment to excellence in real estate development, featuring state-of-the-art amenities and sustainable design principles.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -587,81 +551,66 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto mb-16">
-                <!-- Featured Article -->
-                <div class="md:col-span-2 lg:col-span-1">
-                    <div class="relative h-full min-h-[400px] rounded-xl overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c54be38558bd?q=80&w=2670&auto=format&fit=crop" alt="Featured News"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8 text-white">
-                            <span class="bg-[#340c7f] text-xs font-bold px-3 py-1 rounded mb-4 inline-block">Company News</span>
-                            <div class="flex items-center gap-4 text-sm text-white/80 mb-3">
-                                <span>January 15, 2026</span>
-                                <span>5 min read</span>
+                @if($news->isNotEmpty())
+                    @php
+                        $featuredNews = $news->first();
+                        $sideNews = $news->slice(1);
+                    @endphp
+
+                    <!-- Featured Article -->
+                    <div class="md:col-span-2 lg:col-span-1">
+                        <div class="relative h-full min-h-[400px] rounded-xl overflow-hidden group">
+                            <img src="{{ $featuredNews->thumbnail ? asset('storage/' . $featuredNews->thumbnail) : 'https://images.unsplash.com/photo-1504384308090-c54be38558bd?q=80&w=2670&auto=format&fit=crop' }}" alt="{{ $featuredNews->title }}"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 p-8 text-white">
+                                <span class="bg-[#340c7f] text-xs font-bold px-3 py-1 rounded mb-4 inline-block">{{ $featuredNews->category->name ?? 'News' }}</span>
+                                <div class="flex items-center gap-4 text-sm text-white/80 mb-3">
+                                    <span>{{ $featuredNews->created_at->format('F j, Y') }}</span>
+                                    <span>{{ ceil(str_word_count(strip_tags($featuredNews->description)) / 200) }} min read</span>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-4 leading-tight group-hover:underline decoration-2 underline-offset-4">
+                                    <a href="{{ route('news.show', $featuredNews->slug) }}">
+                                        {{ $featuredNews->title }}
+                                    </a>
+                                </h3>
+                                <p class="text-gray-300 line-clamp-3 mb-6">
+                                    {{ Str::limit(strip_tags($featuredNews->description), 150) }}
+                                </p>
+                                <a href="{{ route('news.show', $featuredNews->slug) }}" class="inline-flex items-center font-semibold hover:text-[#340c7f] transition-colors">Read More <svg class="w-4 h-4 ml-1"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg></a>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-bold mb-4 leading-tight group-hover:underline decoration-2 underline-offset-4">Rigor Equity Makes Bold Entrance in NYC
-                                with Times Square Billboard, Expands LP Base Beyond Chicago</h3>
-                            <p class="text-gray-300 line-clamp-3 mb-6">
-                                Rigor Equity announces major expansion into the New York market with prominent Times Square billboard placement, marking a significant milestone in the
-                                firm's growth strategy and national brand partnership expansion.
-                            </p>
-                            <a href="#" class="inline-flex items-center font-semibold hover:text-[#340c7f] transition-colors">Read More <svg class="w-4 h-4 ml-1"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Side Articles -->
-                <div class="space-y-8">
-                    <!-- Article 1 -->
-                    <div class="flex gap-6 group">
-                        <div class="w-1/3 h-32 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1590674899505-1c5c41951f89?q=80&w=2670&auto=format&fit=crop" alt="News"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        </div>
-                        <div class="w-2/3">
-                            <span class="text-[#340c7f] text-xs font-bold uppercase tracking-wide mb-2 block">Construction</span>
-                            <h4 class="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-[#340c7f] transition-colors">Construction Cost Management Strategies for
-                                Success</h4>
-                            <p class="text-sm text-gray-500 line-clamp-2 mb-2">Best practices for managing construction costs in today's volatile market, from procurement strategies
-                                to technology.</p>
-                            <span class="text-xs text-gray-400">Oct 12, 2025 • 4 min read</span>
                         </div>
                     </div>
 
-                    <!-- Article 2 -->
-                    <div class="flex gap-6 group">
-                        <div class="w-1/3 h-32 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2670&auto=format&fit=crop" alt="News"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        </div>
-                        <div class="w-2/3">
-                            <span class="text-[#340c7f] text-xs font-bold uppercase tracking-wide mb-2 block">Market Strategy</span>
-                            <h4 class="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-[#340c7f] transition-colors">ESG Integration in Real Estate Investment</h4>
-                            <p class="text-sm text-gray-500 line-clamp-2 mb-2">How environmental, social, and governance factors are reshaping institutional real estate investment
-                                strategies.</p>
-                            <span class="text-xs text-gray-400">Sep 28, 2025 • 6 min read</span>
-                        </div>
+                    <!-- Side Articles -->
+                    <div class="space-y-8">
+                        @foreach($sideNews as $item)
+                            <div class="flex gap-6 group">
+                                <div class="w-1/3 h-32 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://images.unsplash.com/photo-1590674899505-1c5c41951f89?q=80&w=2670&auto=format&fit=crop' }}" alt="{{ $item->title }}"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="w-2/3">
+                                    <span class="text-[#340c7f] text-xs font-bold uppercase tracking-wide mb-2 block">{{ $item->category->name ?? 'News' }}</span>
+                                    <h4 class="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-[#340c7f] transition-colors">
+                                        <a href="{{ route('news.show', $item->slug) }}">
+                                            {{ $item->title }}
+                                        </a>
+                                    </h4>
+                                    <p class="text-sm text-gray-500 line-clamp-2 mb-2">{{ Str::limit(strip_tags($item->description), 100) }}</p>
+                                    <span class="text-xs text-gray-400">{{ $item->created_at->format('M j, Y') }} • {{ ceil(str_word_count(strip_tags($item->description)) / 200) }} min read</span>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-
-                    <!-- Article 3 -->
-                    <div class="flex gap-6 group">
-                        <div class="w-1/3 h-32 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2670&auto=format&fit=crop" alt="News"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        </div>
-                        <div class="w-2/3">
-                            <span class="text-[#340c7f] text-xs font-bold uppercase tracking-wide mb-2 block">Public Sector</span>
-                            <h4 class="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-[#340c7f] transition-colors">Public-Private Partnerships: A Framework for
-                                Success</h4>
-                            <p class="text-sm text-gray-500 line-clamp-2 mb-2">Examining successful models for public-private partnerships in residential development and their impact.
-                            </p>
-                            <span class="text-xs text-gray-400">Aug 15, 2025 • 5 min read</span>
-                        </div>
+                @else
+                    <div class="col-span-2 text-center text-gray-500 py-10">
+                        No news articles available at the moment.
                     </div>
-                </div>
+                @endif
             </div>
 
             <div class="text-center">

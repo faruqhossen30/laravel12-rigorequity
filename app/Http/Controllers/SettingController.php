@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    public function index()
-    {
-        $settings = Setting::all()->groupBy('group');
-
-        return view('settings.index', compact('settings'));
-    }
 
     public function homepage()
     {
@@ -43,6 +37,44 @@ class SettingController extends Controller
             ->groupBy('group');
 
         return view('settings.contact', compact('settings'));
+    }
+
+    public function investment()
+    {
+        // Fetch all settings related to investment page
+        $settings = Setting::where('group', 'like', 'investment_%')
+            ->get()
+            ->groupBy('group');
+
+        return view('settings.investment', compact('settings'));
+    }
+
+    public function construction()
+    {
+        // Fetch all settings related to construction page
+        $settings = Setting::where('group', 'like', 'construction_%')
+            ->get()
+            ->groupBy('group');
+
+        return view('settings.construction', compact('settings'));
+    }
+
+    public function development()
+    {
+        $settings = Setting::where('group', 'like', 'development_%')
+            ->get()
+            ->groupBy('group');
+
+        return view('settings.development', compact('settings'));
+    }
+
+    public function publicSector()
+    {
+        $settings = Setting::where('group', 'like', 'public_sector_%')
+            ->get()
+            ->groupBy('group');
+
+        return view('settings.public-sector', compact('settings'));
     }
 
     public function update(Request $request)

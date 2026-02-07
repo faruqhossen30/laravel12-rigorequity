@@ -74,7 +74,7 @@
 <body class="bg-background text-foreground font-sans antialiased min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground">
 
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95">
         <div class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
             <div class="flex items-center gap-2">
                 <a href="/" class="flex items-center space-x-2">

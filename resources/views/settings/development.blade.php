@@ -1,6 +1,6 @@
 @extends('vendor.tyro-dashboard.layouts.admin')
 
-@section('title', 'General Settings')
+@section('title', 'Development Page Settings')
 
 @push('styles')
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
@@ -34,8 +34,8 @@
 @section('content')
 <div class="page-header">
     <div>
-        <h1 class="page-title">General Settings</h1>
-        <p class="page-description">Manage general application settings.</p>
+        <h1 class="page-title">Development Page Settings</h1>
+        <p class="page-description">Manage content and SEO for the Development page.</p>
     </div>
 </div>
 
@@ -46,7 +46,7 @@
     @foreach($settings as $group => $groupSettings)
     <div class="card" style="margin-bottom: 1.5rem;">
         <div class="card-header">
-            <h3 class="card-title" style="text-transform: capitalize;">{{ $group }} Settings</h3>
+            <h3 class="card-title" style="text-transform: capitalize;">{{ str_replace('_', ' ', $group) }} Settings</h3>
         </div>
         <div class="card-body">
             @foreach($groupSettings as $setting)

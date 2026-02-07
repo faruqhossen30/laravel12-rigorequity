@@ -38,7 +38,7 @@
 
     <!-- Main Content -->
     <div class="bg-gray-50 py-16">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-7xl mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
                 <!-- Left Column: Contact Info -->
                 <div class="lg:w-1/3 space-y-8">

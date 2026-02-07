@@ -186,16 +186,6 @@ return [
                 ],
             ],
         ],
-        'posts' => [
-            'model' => 'App\Models\Blog',
-            'title' => 'Blogs',
-            'fields' => [
-                'name' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
-                'price' => ['type' => 'number', 'label' => 'Price', 'rules' => 'required'],
-                'description' => ['type' => 'richtext', 'label' => 'description', 'rules' => 'required'],
-                'status' => ['type' => 'select', 'label' => 'Status', 'rules' => 'required', 'options' => ['active', 'deactive']],
-            ],
-        ],
         'Fetature Client' => [
             'model' => 'App\Models\FeatureClient',
             'title' => 'Feature Client',
@@ -208,6 +198,7 @@ return [
             'model' => 'App\Models\Faq',
             'title' => 'FAQ',
             'fields' => [
+                'page' => ['type' => 'select', 'label' => 'Page', 'rules' => 'required', 'options' => ['home', 'investment', 'construction','development', 'public-sector']],
                 'question' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
                 'answer' => ['type' => 'richtext', 'label' => 'Answer', 'rules' => 'required'],
             ],
