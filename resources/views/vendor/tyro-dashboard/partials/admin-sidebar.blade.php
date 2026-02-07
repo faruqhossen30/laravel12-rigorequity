@@ -72,13 +72,13 @@
                     <a href="{{ route('settings.investment') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.investment') ? 'active' : '' }}">
                         Investment Page Setting
                     </a>
-                    <a href="{{ route('settings.construction') }}" class="menu-item {{ request()->routeIs('settings.construction') ? 'active' : '' }}">
+                    <a href="{{ route('settings.construction') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.construction') ? 'active' : '' }}">
                         Construction Page Setting
                     </a>
-                    <a href="{{ route('settings.development') }}" class="menu-item {{ request()->routeIs('settings.development') ? 'active' : '' }}">
+                    <a href="{{ route('settings.development') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.development') ? 'active' : '' }}">
                         Development Page Setting
                     </a>
-                    <a href="{{ route('settings.public-sector') }}" class="menu-item {{ request()->routeIs('settings.public-sector') ? 'active' : '' }}">
+                    <a href="{{ route('settings.public-sector') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.public-sector') ? 'active' : '' }}">
                         Public Sector Page Setting
                     </a>
                 </div>
