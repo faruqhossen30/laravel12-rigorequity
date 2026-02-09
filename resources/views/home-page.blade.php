@@ -33,14 +33,16 @@
 
     <div class="relative h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-hidden"><iframe class="absolute inset-0 w-full h-full pointer-events-none"
             src="https://www.youtube.com/embed/QkvkbP_JNlg?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=QkvkbP_JNlg&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;enablejsapi=1&amp;origin={{ request()->getSchemeAndHttpHost() }}"
-            title="Construction Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""
+            title="Construction Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""
             style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.5s ease-in-out;"></iframe>
         <div class="absolute inset-0 pointer-events-none" style="box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 100px 60px inset, rgba(0, 0, 0, 0.7) 0px 0px 60px 30px inset;"></div>
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
             <div class="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <h1 class="text-3xl md:text-4xl lg:text-5xl mb-4 text-white leading-tight">{!! $settings['homepage_hero_title'] ?? 'Integrated Solutions.<br>Lasting Impact.' !!}</h1>
-                <div class="text-lg md:text-xl lg:text-2xl mb-6 text-white/90">{!! $settings['homepage_hero_description'] ?? 'Vertically integrated operator delivering end-to-end real estate solutions and building institutional-quality assets in overlooked urban submarkets.' !!}</div>
+                <div class="text-lg md:text-xl lg:text-2xl mb-6 text-white/90">{!! $settings['homepage_hero_description'] ??
+                    'Vertically integrated operator delivering end-to-end real estate solutions and building institutional-quality assets in overlooked urban submarkets.' !!}</div>
                 <div class="flex flex-col sm:flex-row gap-4"><a href="/about"
                         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 bg-[#2e099a] text-white hover:bg-[#2e099a]/90 hover:scale-105 active:scale-95 transition-all duration-200 w-fit">About
                         Us<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -139,7 +141,8 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Investment Management</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">We manage real estate investments in Chicago to increase value through smart planning, careful oversight, and long-term growth strategies.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">We manage real estate investments in Chicago to increase value through smart planning, careful oversight, and
+                        long-term growth strategies.</p>
                     <a href="/investment-management" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">Learn
                         more <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -217,13 +220,12 @@
                     </p>
 
                     <div class="space-y-6" x-data="{ active: null }">
-                        @foreach($faqs as $index => $faq)
+                        @foreach ($faqs as $index => $faq)
                             <div class="border-b border-gray-200 pb-4">
                                 <button @click="active = (active === {{ $index }} ? null : {{ $index }})"
                                     class="flex items-center justify-between w-full text-left font-bold text-gray-900 hover:text-[#340c7f] text-lg group">
                                     <span>{{ $faq->question }}</span>
-                                    <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]"
-                                        x-text="active === {{ $index }} ? '-' : '+'">+</span>
+                                    <span class="text-2xl text-gray-400 group-hover:text-[#340c7f]" x-text="active === {{ $index }} ? '-' : '+'">+</span>
                                 </button>
                                 <div x-show="active === {{ $index }}" x-collapse>
                                     <div class="pt-4 text-gray-600 leading-relaxed">
@@ -247,7 +249,352 @@
     </section>
 
     <!-- Operations Section -->
-    {{-- @include('inc.faq') --}}
+
+    {{-- Start --}}
+    <section class="pt-12 md:pt-16 lg:pt-20 pb-4 md:pb-6 lg:pb-8" x-data="{ activeAccordion: 'item-1' }">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16 transition-all duration-700 opacity-100 translate-y-0">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">Operations &amp; Asset Management</h2>
+                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Institutional-quality operations across every aspect of the asset lifecycle</p>
+            </div>
+            <div class="hidden md:block">
+                <div data-slot="accordion" class="transition-all duration-700 opacity-100 translate-y-0" data-orientation="vertical">
+                    <div x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-1' ? '' : 'item-1'" x-bind:aria-expanded="activeAccordion === 'item-1'"
+                                x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
+                                <div class="flex items-center gap-4 text-left">
+                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-clipboard-check h-6 w-6 text-white" aria-hidden="true">
+                                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                            <path d="m9 14 2 2 4-4"></path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-xl">Property Management</div>
+                                        <div class="text-sm text-muted-foreground mt-1">24/7 tenant services and proactive oversight</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-1'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">Our property management team delivers white-glove service with dedicated on-site managers, 24/7 emergency response, and proactive
+                                    maintenance programs. We leverage technology platforms for tenant communications, rent collection, and service requests while maintaining the
+                                    personal touch that drives tenant satisfaction and retention.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Dedicated on-site management teams </li>
+                                    <li>Digital tenant portal for seamless communication </li>
+                                    <li>Regular property inspections and reporting </li>
+                                    <li>24/7 emergency response systems </li>
+                                    <li>Proactive preventive maintenance programs </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-2' ? '' : 'item-2'" x-bind:aria-expanded="activeAccordion === 'item-2'"
+                                x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
+                                <div class="flex items-center gap-4 text-left">
+                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-chart-line h-6 w-6 text-white" aria-hidden="true">
+                                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                            <path d="m19 9-5 5-4-4-3 3"></path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-xl">Asset Management</div>
+                                        <div class="text-sm text-muted-foreground mt-1">Data-driven performance optimization</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-2'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">Our asset management platform combines real-time performance tracking with strategic planning to maximize property value. We
+                                    continuously monitor key metrics, identify value-add opportunities, and execute operational improvements that drive NOI growth and enhance asset
+                                    positioning.
+                                </p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Real-time performance dashboards </li>
+                                    <li>Market positioning and competitive analysis</li>
+                                    <li>Expense management and vendor negotiations</li>
+                                    <li>Strategic capital improvement planning</li>
+                                    <li>Revenue optimization strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-3' ? '' : 'item-3'" x-bind:aria-expanded="activeAccordion === 'item-3'"
+                                x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
+                                <div class="flex items-center gap-4 text-left">
+                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-file-text h-6 w-6 text-white" aria-hidden="true">
+                                            <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
+                                            <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                                            <path d="M10 9H8"></path>
+                                            <path d="M16 13H8"></path>
+                                            <path d="M16 17H8"></path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-xl">Financial Reporting &amp; Compliance</div>
+                                        <div class="text-sm text-muted-foreground mt-1">Transparent, institutional-grade reporting</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-3'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">We provide comprehensive monthly financial statements, variance analysis, and forward-looking projections. Our reporting meets institutional standards with full audit trails, compliance documentation, and detailed analytics that give investors complete transparency into portfolio performance.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Monthly financial statements and variance analysis</li>
+                                    <li>Annual audited financials</li>
+                                    <li>Real-time investor portal access</li>
+                                    <li>Quarterly investor reports and presentations</li>
+                                    <li>Tax documentation and K-1 preparation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-4' ? '' : 'item-4'" x-bind:aria-expanded="activeAccordion === 'item-4'"
+                                x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
+                                <div class="flex items-center gap-4 text-left">
+                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-headphones h-6 w-6 text-white" aria-hidden="true">
+                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                                            </path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-xl">Tenant Services &amp; Experience</div>
+                                        <div class="text-sm text-muted-foreground mt-1">Premium resident experience delivery</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-4'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">We've built a tenant-first culture that prioritizes rapid response, clear communication, and community building. Our teams are empowered to resolve issues quickly and create living environments where residents want to stay long-term, driving both retention and organic referrals</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Average 48-hour maintenance response time</li>
+                                    <li>Online rent payment and service requests</li>
+                                    <li>Regular satisfaction surveys and feedback loops</li>
+                                    <li>Resident events and community programming</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <div data-slot="accordion" data-orientation="vertical">
+                    <div x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-1' ? '' : 'item-1'" x-bind:aria-expanded="activeAccordion === 'item-1'"
+                                x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                <div class="flex items-center gap-3 text-left">
+                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-clipboard-check h-5 w-5 text-white" aria-hidden="true">
+                                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                            <path d="m9 14 2 2 4-4"></path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-base">Property Management</div>
+                                        <div class="text-xs text-muted-foreground mt-0.5">24/7 tenant services and proactive oversight</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-1'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">Hands-on operational oversight with dedicated property management teams driving NOI growth and value creation.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>24/7 Maintenance Support</li>
+                                    <li>Tenant Relations & Retention</li>
+                                    <li>Lease Administration</li>
+                                    <li>Vendor Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-2' ? '' : 'item-2'" x-bind:aria-expanded="activeAccordion === 'item-2'"
+                                x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                <div class="flex items-center gap-3 text-left">
+                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-chart-line h-5 w-5 text-white" aria-hidden="true">
+                                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                            <path d="m19 9-5 5-4-4-3 3"></path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-base">Asset Management</div>
+                                        <div class="text-xs text-muted-foreground mt-0.5">Data-driven performance optimization</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-2'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">Strategic planning and execution to maximize property value and investment returns throughout the ownership lifecycle.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Capital Improvement Planning</li>
+                                    <li>Expense Management</li>
+                                    <li>Revenue Optimization</li>
+                                    <li>Market Analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-3' ? '' : 'item-3'" x-bind:aria-expanded="activeAccordion === 'item-3'"
+                                x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                <div class="flex items-center gap-3 text-left">
+                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5 text-white" aria-hidden="true">
+                                            <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
+                                            <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                                            <path d="M10 9H8"></path>
+                                            <path d="M16 13H8"></path>
+                                            <path d="M16 17H8"></path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-base">Financial Reporting &amp; Compliance</div>
+                                        <div class="text-xs text-muted-foreground mt-0.5">Transparent, institutional-grade reporting</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-3'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">Institutional-grade financial reporting providing transparency and accountability to all stakeholders.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Monthly Financial Statements</li>
+                                    <li>Budgeting & Forecasting</li>
+                                    <li>Tax Preparation Support</li>
+                                    <li>Regulatory Compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" class="flex">
+                            <button type="button" @click="activeAccordion = activeAccordion === 'item-4' ? '' : 'item-4'" x-bind:aria-expanded="activeAccordion === 'item-4'"
+                                x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                <div class="flex items-center gap-3 text-left">
+                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-headphones h-5 w-5 text-white" aria-hidden="true">
+                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                                            </path>
+                                        </svg></div>
+                                    <div>
+                                        <div class="text-base">Tenant Services &amp; Experience</div>
+                                        <div class="text-xs text-muted-foreground mt-0.5">Premium resident experience delivery</div>
+                                    </div>
+                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                        </h3>
+                        <div x-show="activeAccordion === 'item-4'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" role="region"
+                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                            <div class="pb-4 pt-0 text-muted-foreground">
+                                <p class="mb-2">Creating vibrant communities through exceptional service and curated tenant experiences.</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Community Events & Activations</li>
+                                    <li>Digital Tenant Portal</li>
+                                    <li>Concierge Services</li>
+                                    <li>Feedback & Satisfaction Surveys</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 md:mt-10 grid grid-cols-3 gap-4 md:gap-6 transition-all duration-700 opacity-100 translate-y-0" style="transition-delay: 300ms;">
+                <div class="text-center p-4 md:p-6 bg-gray-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl lg:text-4xl text-[#2e099a] mb-1 md:mb-2">95%+</div>
+                    <div class="text-xs md:text-sm text-muted-foreground">Occupancy Rate</div>
+                </div>
+                <div class="text-center p-4 md:p-6 bg-gray-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl lg:text-4xl text-[#2e099a] mb-1 md:mb-2">30+</div>
+                    <div class="text-xs md:text-sm text-muted-foreground">Team Members</div>
+                </div>
+                <div class="text-center p-4 md:p-6 bg-gray-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl lg:text-4xl text-[#2e099a] mb-1 md:mb-2">24/7</div>
+                    <div class="text-xs md:text-sm text-muted-foreground">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- End --}}
+
     <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
 
@@ -277,63 +624,64 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
-                @foreach($projects as $project)
-                <!-- Project Card -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="h-64 bg-gray-200 relative overflow-hidden">
-                        @if($project->image)
-                            <img src="{{ Storage::url($project->image) }}" alt="{{ $project->title }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        @else
-                            <div class="w-full h-full bg-gray-200 flex items-center justify-center">
-                                <span class="text-gray-400">No Image</span>
-                            </div>
-                        @endif
-
-                        <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider">
-                            {{ $project->status }}
-                        </div>
-
-                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg flex items-center justify-between">
-                            <span class="text-[#340c7f] font-bold text-sm">{{ $project->title }}</span>
-                            <span class="text-xs font-semibold bg-gray-100 px-2 py-1 rounded">{{ $project->type }}</span>
-                        </div>
-                    </div>
-
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            <span>{{ $project->location ?? 'Location N/A' }}</span>
-                        </div>
-
-                        <div class="grid grid-cols-3 gap-2 text-center text-xs border-t border-gray-100 pt-6">
-                            <div>
-                                <div class="font-bold text-gray-900 text-lg">{{ $project->units ?? '-' }}</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Units</div>
-                            </div>
-                            <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">{{ $project->sf ?? '-' }}</div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">SF</div>
-                            </div>
-                            <div class="border-l border-gray-100">
-                                <div class="font-bold text-gray-900 text-lg">
-                                    {{ $project->completion_date ? $project->completion_date->format('Y') : '-' }}
+                @foreach ($projects as $project)
+                    <!-- Project Card -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 relative overflow-hidden">
+                            @if ($project->image)
+                                <img src="{{ Storage::url($project->image) }}" alt="{{ $project->title }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            @else
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                                    <span class="text-gray-400">No Image</span>
                                 </div>
-                                <div class="text-gray-500 uppercase tracking-wide text-[10px]">Completion</div>
+                            @endif
+
+                            <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider">
+                                {{ $project->status }}
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg flex items-center justify-between">
+                                <span class="text-[#340c7f] font-bold text-sm">{{ $project->title }}</span>
+                                <span class="text-xs font-semibold bg-gray-100 px-2 py-1 rounded">{{ $project->type }}</span>
                             </div>
                         </div>
 
-                        <div class="mt-6">
-                            <button @click="activeProject = {{ json_encode($project) }}" class="block w-full text-center py-2.5 border border-[#340c7f] text-[#340c7f] font-semibold rounded hover:bg-[#340c7f] hover:text-white transition-colors text-sm">
-                                View Details
-                            </button>
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span>{{ $project->location ?? 'Location N/A' }}</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs border-t border-gray-100 pt-6">
+                                <div>
+                                    <div class="font-bold text-gray-900 text-lg">{{ $project->units ?? '-' }}</div>
+                                    <div class="text-gray-500 uppercase tracking-wide text-[10px]">Units</div>
+                                </div>
+                                <div class="border-l border-gray-100">
+                                    <div class="font-bold text-gray-900 text-lg">{{ $project->sf ?? '-' }}</div>
+                                    <div class="text-gray-500 uppercase tracking-wide text-[10px]">SF</div>
+                                </div>
+                                <div class="border-l border-gray-100">
+                                    <div class="font-bold text-gray-900 text-lg">
+                                        {{ $project->completion_date ? $project->completion_date->format('Y') : '-' }}
+                                    </div>
+                                    <div class="text-gray-500 uppercase tracking-wide text-[10px]">Completion</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <button @click="activeProject = {{ json_encode($project) }}"
+                                    class="block w-full text-center py-2.5 border border-[#340c7f] text-[#340c7f] font-semibold rounded hover:bg-[#340c7f] hover:text-white transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
 
@@ -345,14 +693,8 @@
             </div>
 
             <!-- Project Details Modal -->
-            <div x-show="activeProject"
-                style="display: none;"
-                class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
-                x-transition:enter="ease-out duration-300"
-                x-transition:enter-start="opacity-0"
-                x-transition:enter-end="opacity-100"
-                x-transition:leave="ease-in duration-200"
-                x-transition:leave-start="opacity-100"
+            <div x-show="activeProject" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" x-transition:enter="ease-out duration-300"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100"
                 x-transition:leave-end="opacity-0">
 
                 <!-- Backdrop -->
@@ -360,16 +702,18 @@
 
                 <!-- Modal Panel -->
                 <div class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all flex flex-col md:flex-row max-h-[90vh]"
-                    x-transition:enter="ease-out duration-300"
-                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                    x-transition:leave="ease-in duration-200"
-                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+                    x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
 
                     <!-- Close Button -->
-                    <button @click="activeProject = null" class="absolute top-4 right-4 z-10 p-2 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white text-gray-600 hover:text-gray-900 transition-colors shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 18"/></svg>
+                    <button @click="activeProject = null"
+                        class="absolute top-4 right-4 z-10 p-2 bg-white/50 backdrop-blur-sm rounded-full hover:bg-white text-gray-600 hover:text-gray-900 transition-colors shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 18 18" />
+                        </svg>
                     </button>
 
                     <!-- Image Section (Left/Top) -->
@@ -382,7 +726,8 @@
                                 <span class="text-lg">No Image Available</span>
                             </div>
                         </template>
-                        <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-sm" x-text="activeProject?.status"></div>
+                        <div class="absolute top-4 left-4 bg-[#340c7f] text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wider shadow-sm"
+                            x-text="activeProject?.status"></div>
                     </div>
 
                     <!-- Content Section (Right/Bottom) -->
@@ -391,7 +736,11 @@
                             <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 mb-3" x-text="activeProject?.type"></span>
                             <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight" x-text="activeProject?.title"></h3>
                             <div class="flex items-center text-sm text-gray-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[#340c7f]">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
                                 <span x-text="activeProject?.location || 'Location N/A'"></span>
                             </div>
                         </div>
@@ -407,7 +756,8 @@
                             </div>
                             <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
                                 <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Completion</div>
-                                <div class="font-bold text-gray-900 text-lg" x-text="activeProject?.completion_date ? new Date(activeProject.completion_date).getFullYear() : '-'"></div>
+                                <div class="font-bold text-gray-900 text-lg" x-text="activeProject?.completion_date ? new Date(activeProject.completion_date).getFullYear() : '-'">
+                                </div>
                             </div>
                             <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
                                 <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Value</div>
@@ -420,7 +770,8 @@
                                 <h4 class="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Partners</h4>
                                 <div class="flex flex-wrap gap-2">
                                     <template x-for="partner in activeProject.partners">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100" x-text="partner"></span>
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100"
+                                            x-text="partner"></span>
                                     </template>
                                 </div>
                             </div>
@@ -428,7 +779,8 @@
 
                         <!-- Optional: Description Placeholder if model doesn't have it yet -->
                         <div class="mt-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-6">
-                            <p>This project represents our commitment to excellence in real estate development, featuring state-of-the-art amenities and sustainable design principles.</p>
+                            <p>This project represents our commitment to excellence in real estate development, featuring state-of-the-art amenities and sustainable design principles.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -551,7 +903,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto mb-16">
-                @if($news->isNotEmpty())
+                @if ($news->isNotEmpty())
                     @php
                         $featuredNews = $news->first();
                         $sideNews = $news->slice(1);
@@ -560,8 +912,8 @@
                     <!-- Featured Article -->
                     <div class="md:col-span-2 lg:col-span-1">
                         <div class="relative h-full min-h-[400px] rounded-xl overflow-hidden group">
-                            <img src="{{ $featuredNews->thumbnail ? asset('storage/' . $featuredNews->thumbnail) : 'https://images.unsplash.com/photo-1504384308090-c54be38558bd?q=80&w=2670&auto=format&fit=crop' }}" alt="{{ $featuredNews->title }}"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <img src="{{ $featuredNews->thumbnail ? asset('storage/' . $featuredNews->thumbnail) : 'https://images.unsplash.com/photo-1504384308090-c54be38558bd?q=80&w=2670&auto=format&fit=crop' }}"
+                                alt="{{ $featuredNews->title }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                             <div class="absolute bottom-0 left-0 p-8 text-white">
                                 <span class="bg-[#340c7f] text-xs font-bold px-3 py-1 rounded mb-4 inline-block">{{ $featuredNews->category->name ?? 'News' }}</span>
@@ -577,8 +929,8 @@
                                 <p class="text-gray-300 line-clamp-3 mb-6">
                                     {{ Str::limit(strip_tags($featuredNews->description), 150) }}
                                 </p>
-                                <a href="{{ route('news.show', $featuredNews->slug) }}" class="inline-flex items-center font-semibold hover:text-[#340c7f] transition-colors">Read More <svg class="w-4 h-4 ml-1"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <a href="{{ route('news.show', $featuredNews->slug) }}" class="inline-flex items-center font-semibold hover:text-[#340c7f] transition-colors">Read
+                                    More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                     </svg></a>
                             </div>
@@ -587,11 +939,11 @@
 
                     <!-- Side Articles -->
                     <div class="space-y-8">
-                        @foreach($sideNews as $item)
+                        @foreach ($sideNews as $item)
                             <div class="flex gap-6 group">
                                 <div class="w-1/3 h-32 rounded-lg overflow-hidden flex-shrink-0">
-                                    <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://images.unsplash.com/photo-1590674899505-1c5c41951f89?q=80&w=2670&auto=format&fit=crop' }}" alt="{{ $item->title }}"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://images.unsplash.com/photo-1590674899505-1c5c41951f89?q=80&w=2670&auto=format&fit=crop' }}"
+                                        alt="{{ $item->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                                 <div class="w-2/3">
                                     <span class="text-[#340c7f] text-xs font-bold uppercase tracking-wide mb-2 block">{{ $item->category->name ?? 'News' }}</span>
@@ -601,7 +953,8 @@
                                         </a>
                                     </h4>
                                     <p class="text-sm text-gray-500 line-clamp-2 mb-2">{{ Str::limit(strip_tags($item->description), 100) }}</p>
-                                    <span class="text-xs text-gray-400">{{ $item->created_at->format('M j, Y') }} • {{ ceil(str_word_count(strip_tags($item->description)) / 200) }} min read</span>
+                                    <span class="text-xs text-gray-400">{{ $item->created_at->format('M j, Y') }} • {{ ceil(str_word_count(strip_tags($item->description)) / 200) }}
+                                        min read</span>
                                 </div>
                             </div>
                         @endforeach

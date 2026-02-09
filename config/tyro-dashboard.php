@@ -169,6 +169,7 @@ return [
         'News' => [
             'model' => 'App\Models\News',
             'title' => 'News',
+            'upload_disk' => 'public',
             'fields' => [
                 'title' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
                 'category_id' => [
