@@ -79,7 +79,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="text-center mb-3 flex items-center justify-center gap-4">
             <div class="h-px w-10 md:w-16 bg-gradient-to-r from-transparent to-[#2e099a]"></div>
-            <p class="text-foreground uppercase tracking-wide text-lg md:text-xl lg:text-2xl" style="font-family: Inter, sans-serif;">As Featured In</p>
+            <p class="text-foreground uppercase tracking-wide text-lg md:text-xl lg:text-xl mb-2" style="font-family: Inter, sans-serif;">As Featured In</p>
             <div class="h-px w-10 md:w-16 bg-gradient-to-l from-transparent to-[#2e099a]"></div>
         </div>
         <div class="overflow-hidden relative">
@@ -117,7 +117,7 @@
                 <div class="logo-track animate-scroll-logos">
                     @foreach ($featureClients as $client)
                         <div class="flex items-center justify-center flex-shrink-0 px-8 md:px-12">
-                            <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name ?? 'Client' }}" class="h-8 md:h-10 w-auto">
+                            <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name ?? 'Client' }}" class="h-8 md:h-8 w-auto">
                         </div>
                     @endforeach
                 </div>
@@ -127,9 +127,9 @@
     </div>
 
     <!-- Vertically Integrated Service Lines -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">{{ $settings['homepage_services_title'] ?? 'Vertically Integrated to Deliver Value' }}</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-20">{{ $settings['homepage_services_title'] ?? 'Vertically Integrated to Deliver Value' }}</h2>
             <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Card 1 -->
                 <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
@@ -209,7 +209,7 @@
     </section>
 
     <!-- Platform Section -->
-    <section class="py-24 bg-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-16 items-center max-w-6xl mx-auto">
                 <div class="lg:w-1/2">
@@ -251,7 +251,7 @@
     <!-- Operations Section -->
 
     {{-- Start --}}
-    <section class="pt-12 md:pt-16 lg:pt-20 pb-4 md:pb-6 lg:pb-8" x-data="{ activeAccordion: 'item-1' }">
+    <section class="py-20 pt-10" x-data="{ activeAccordion: 'item-1' }">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 md:mb-16 transition-all duration-700 opacity-100 translate-y-0">
                 <h2 class="text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">Operations &amp; Asset Management</h2>
@@ -575,20 +575,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="mt-8 md:mt-10 grid grid-cols-3 gap-4 md:gap-6 transition-all duration-700 opacity-100 translate-y-0" style="transition-delay: 300ms;">
-                <div class="text-center p-4 md:p-6 bg-gray-50 rounded-lg">
-                    <div class="text-2xl md:text-3xl lg:text-4xl text-[#2e099a] mb-1 md:mb-2">95%+</div>
-                    <div class="text-xs md:text-sm text-muted-foreground">Occupancy Rate</div>
-                </div>
-                <div class="text-center p-4 md:p-6 bg-gray-50 rounded-lg">
-                    <div class="text-2xl md:text-3xl lg:text-4xl text-[#2e099a] mb-1 md:mb-2">30+</div>
-                    <div class="text-xs md:text-sm text-muted-foreground">Team Members</div>
-                </div>
-                <div class="text-center p-4 md:p-6 bg-gray-50 rounded-lg">
-                    <div class="text-2xl md:text-3xl lg:text-4xl text-[#2e099a] mb-1 md:mb-2">24/7</div>
-                    <div class="text-xs md:text-sm text-muted-foreground">Support</div>
                 </div>
             </div>
         </div>

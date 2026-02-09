@@ -7,6 +7,10 @@
     <meta name="description" content="@yield('meta_description', 'Rigorequity - Modern Equity Management')">
     <meta name="keywords" content="@yield('meta_keywords', 'real estate, equity, management')">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/Rigorequity_Favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/Rigorequity_Favicon.png') }}">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
@@ -31,7 +35,7 @@
 <body class="bg-background text-foreground font-sans antialiased min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground">
 
     <!-- Navbar -->
-    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95">
+    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 w-full border-b border-border/40 bg-background">
         <div class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
             <div class="flex items-center gap-2">
                 <a href="/" class="flex items-center space-x-2">
@@ -183,11 +187,11 @@
                 <div>
                     <h3 class="font-semibold text-foreground mb-4">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="{{route('privacy-policy')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
-                        <li><a href="{{route('terms-and-conditions')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Terms and Conditions</a></li>
-                        <li><a href="{{route('cookie-policy')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a></li>
+                        <li><a href="{{route('about')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
                         <li><a href="{{route('contact')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
-
+                        <li><a href="{{route('construction')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Construction</a></li>
+                        <li><a href="{{route('development')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Development</a></li>
+                        <li><a href="{{route('invest-namagement')}}" class="text-sm text-muted-foreground hover:text-primary transition-colors">Invest Management</a></li>
                     </ul>
                 </div>
 

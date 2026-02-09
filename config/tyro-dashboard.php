@@ -62,7 +62,7 @@ return [
         'app_name' => env('TYRO_DASHBOARD_APP_NAME', env('APP_NAME', 'Laravel')),
         'logo' => env('TYRO_DASHBOARD_LOGO', null),
         'logo_height' => env('TYRO_DASHBOARD_LOGO_HEIGHT', '32px'),
-        'favicon' => env('TYRO_DASHBOARD_FAVICON', null),
+        'favicon' => env('TYRO_DASHBOARD_FAVICON', 'assets/img/Rigorequity_Favicon.png'),
     ],
 
     /*
