@@ -18,5 +18,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/settings/construction', [SettingController::class, 'construction'])->name('settings.construction');
     Route::get('/dashboard/settings/development', [SettingController::class, 'development'])->name('settings.development');
     Route::get('/dashboard/settings/public-sector', [SettingController::class, 'publicSector'])->name('settings.public-sector');
+    Route::get('/dashboard/settings/footer', [SettingController::class, 'footer'])->name('settings.footer');
     Route::put('/dashboard/settings', [SettingController::class, 'update'])->name('settings.update');
 });

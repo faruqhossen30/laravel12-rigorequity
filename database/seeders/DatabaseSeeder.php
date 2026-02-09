@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ConstructionPageSettingSeeder::class,
             DevelopmentPageSettingSeeder::class,
             PublicSectorPageSettingSeeder::class,
+            FooterSettingsSeeder::class,
             FaqSeeder::class,
         ]);
         

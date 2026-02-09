@@ -81,6 +81,9 @@
                     <a href="{{ route('settings.public-sector') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.public-sector') ? 'active' : '' }}">
                         Public Sector Page Setting
                     </a>
+                    <a href="{{ route('settings.footer') }}" class="sidebar-link text-sm {{ request()->routeIs('settings.footer') ? 'active' : '' }}">
+                        Footer Settings
+                    </a>
                 </div>
             </div>
             <a href="{{ route('tyro-dashboard.users.index') }}" class="sidebar-link {{ request()->routeIs('tyro-dashboard.users.*') ? 'active' : '' }}">

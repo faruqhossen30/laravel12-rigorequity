@@ -1,0 +1,57 @@
+@extends('layouts.frontend')
+
+@section('title', 'Cookie Policy - Rigor Equity')
+
+@section('content')
+<div class="bg-[#f8f9fa] min-h-screen">
+    <div class="container mx-auto px-4 py-16 md:py-24">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#340c7f] mb-6 tracking-tight text-center">Cookie Policy</h1>
+        <p class="text-center text-gray-500 mb-12">Last updated: February 2026</p>
+
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
+            <div class="space-y-10 text-gray-700 leading-relaxed">
+
+                <!-- Intro -->
+                <section>
+                    <p class="mb-4">This Cookie Policy explains how Rigor Equity ("we," "our," or "us") uses cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+                </section>
+
+                <!-- What are Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#340c7f] mb-4">What are Cookies?</h2>
+                    <p class="mb-4">Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners in order to make their websites work, or to work more efficiently, as well as to provide reporting information.</p>
+                </section>
+
+                <!-- How We Use Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#340c7f] mb-4">How We Use Cookies</h2>
+                    <p class="mb-4">We use cookies for several reasons. Some cookies are required for technical reasons in order for our Website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies also enable us to track and target the interests of our users to enhance the experience on our Online Properties. Third parties serve cookies through our Website for advertising, analytics, and other purposes.</p>
+                </section>
+
+                <!-- Performance & Analytics Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#340c7f] mb-4">Performance & Analytics Cookies</h2>
+                    <p class="mb-4">These cookies collect information that is used either in aggregate form to help us understand how our Website is being used or how effective our marketing campaigns are, or to help us customize our Website for you.</p>
+                </section>
+
+                <!-- Managing Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#340c7f] mb-4">Managing Cookies</h2>
+                    <p class="mb-4">You have the right to decide whether to accept or reject cookies. You can exercise your cookie rights by setting your browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted.</p>
+                </section>
+
+                <!-- Contact Information -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#340c7f] mb-4">Contact Information</h2>
+                    <p class="mb-4">If you have any questions about our use of cookies or other technologies, please contact us:</p>
+                    <div class="mt-4 p-6 bg-gray-50 rounded-lg border border-gray-100">
+                        <p class="font-bold text-lg mb-2">Rigor Equity</p>
+                        <p class="mb-1">11 E Hubbard St Suite 501</p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

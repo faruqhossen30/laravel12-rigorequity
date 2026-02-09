@@ -17,6 +17,21 @@ class PageController extends Controller
         return view('about-page', compact('settings'));
     }
 
+    public function privacyPolicyPage()
+    {
+        return view('privacy-policy');
+    }
+
+    public function cookiePolicyPage()
+    {
+        return view('cookie-policy');
+    }
+
+    public function termsAndConditionsPage()
+    {
+        return view('terms-and-conditions');
+    }
+
     public function communityImpactPage()
     {
         return view('community-impact');

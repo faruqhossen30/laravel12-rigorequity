@@ -28,6 +28,9 @@ Route::get('/', function () {
 });
 Route::get('contact', [ContactController::class, 'contactPage'])->name('contact');
 Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
+Route::get('privacy-policy', [PageController::class, 'privacyPolicyPage'])->name('privacy-policy');
+Route::get('cookie-policy', [PageController::class, 'cookiePolicyPage'])->name('cookie-policy');
+Route::get('terms-and-conditions', [PageController::class, 'termsAndConditionsPage'])->name('terms-and-conditions');
 Route::get('about', [PageController::class, 'aboutPage']);
 Route::get('community-impact', [PageController::class, 'communityImpactPage']);
 Route::get('investment-management', [PageController::class, 'investmentManagementPage']);

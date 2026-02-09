@@ -77,6 +77,15 @@ class SettingController extends Controller
         return view('settings.public-sector', compact('settings'));
     }
 
+    public function footer()
+    {
+        $settings = Setting::where('group', 'like', 'footer_%')
+            ->get()
+            ->groupBy('group');
+
+        return view('settings.footer', compact('settings'));
+    }
+
     public function update(Request $request)
     {
         $data = $request->except('_token', '_method');
