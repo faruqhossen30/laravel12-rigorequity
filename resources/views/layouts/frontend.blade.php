@@ -103,7 +103,7 @@
 
         <!-- Mobile Menu -->
         <div x-show="mobileMenuOpen" x-collapse class="md:hidden border-t border-border/40 bg-background">
-            <nav class="flex flex-col p-4 space-y-4">
+            <nav class="flex flex-col p-4 space-y-10">
                 <a href="/investment-management" class="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                     Investment Management
@@ -142,7 +142,12 @@
                 </div>
 
                 <a href="/contact" class="flex items-center justify-center rounded-md bg-primary text-primary-foreground h-10 px-4 text-sm font-medium shadow transition-colors hover:bg-primary/90">
-                    Contact Us
+                    <div class="absolute inset-0 -translate-x-full animate-shine bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <span class="relative z-10">Contact Us</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 ml-2 animate-wiggle transition-transform duration-300 group-hover:translate-x-1 group-hover:animate-none">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
                 </a>
             </nav>
         </div>

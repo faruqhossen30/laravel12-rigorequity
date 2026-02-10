@@ -251,7 +251,7 @@
     <!-- Operations Section -->
 
     {{-- Start --}}
-    <section class="py-20 pt-10" x-data="{ activeAccordion: 'item-1' }">
+    <section class="py-20 pt-10" x-data="{ activeAccordion: '' }">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 md:mb-16 transition-all duration-700 opacity-100 translate-y-0">
                 <h2 class="text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">Operations &amp; Asset Management</h2>
@@ -259,166 +259,35 @@
             </div>
             <div class="hidden md:block">
                 <div data-slot="accordion" class="transition-all duration-700 opacity-100 translate-y-0" data-orientation="vertical">
-                    <div x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-1' ? '' : 'item-1'" x-bind:aria-expanded="activeAccordion === 'item-1'"
-                                x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
-                                <div class="flex items-center gap-4 text-left">
-                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-clipboard-check h-6 w-6 text-white" aria-hidden="true">
-                                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
-                                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                            <path d="m9 14 2 2 4-4"></path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-xl">Property Management</div>
-                                        <div class="text-sm text-muted-foreground mt-1">24/7 tenant services and proactive oversight</div>
+                    @foreach ($questions as $question)
+                        <div x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                            class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
+                            <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" class="flex">
+                                <button type="button" @click="activeAccordion = activeAccordion === 'item-{{ $loop->iteration }}' ? '' : 'item-{{ $loop->iteration }}'" x-bind:aria-expanded="activeAccordion === 'item-{{ $loop->iteration }}'"
+                                    x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
+                                    <div class="flex items-center gap-4 text-left">
+                                        <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-check h-6 w-6 text-white" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-xl">{{$question->title}}</div>
+                                            <div class="text-sm text-muted-foreground mt-1">{{$question->sub_title}}</div>
+                                        </div>
                                     </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-1'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">Our property management team delivers white-glove service with dedicated on-site managers, 24/7 emergency response, and proactive
-                                    maintenance programs. We leverage technology platforms for tenant communications, rent collection, and service requests while maintaining the
-                                    personal touch that drives tenant satisfaction and retention.</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Dedicated on-site management teams </li>
-                                    <li>Digital tenant portal for seamless communication </li>
-                                    <li>Regular property inspections and reporting </li>
-                                    <li>24/7 emergency response systems </li>
-                                    <li>Proactive preventive maintenance programs </li>
-                                </ul>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div x-show="activeAccordion === 'item-{{ $loop->iteration }}'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" role="region"
+                                data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm mb-2">
+                                {!! $question->description !!}
                             </div>
                         </div>
-                    </div>
-                    <div x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-2' ? '' : 'item-2'" x-bind:aria-expanded="activeAccordion === 'item-2'"
-                                x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
-                                <div class="flex items-center gap-4 text-left">
-                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-chart-line h-6 w-6 text-white" aria-hidden="true">
-                                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
-                                            <path d="m19 9-5 5-4-4-3 3"></path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-xl">Asset Management</div>
-                                        <div class="text-sm text-muted-foreground mt-1">Data-driven performance optimization</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-2'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">Our asset management platform combines real-time performance tracking with strategic planning to maximize property value. We
-                                    continuously monitor key metrics, identify value-add opportunities, and execute operational improvements that drive NOI growth and enhance asset
-                                    positioning.
-                                </p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Real-time performance dashboards </li>
-                                    <li>Market positioning and competitive analysis</li>
-                                    <li>Expense management and vendor negotiations</li>
-                                    <li>Strategic capital improvement planning</li>
-                                    <li>Revenue optimization strategies</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-3' ? '' : 'item-3'" x-bind:aria-expanded="activeAccordion === 'item-3'"
-                                x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
-                                <div class="flex items-center gap-4 text-left">
-                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-file-text h-6 w-6 text-white" aria-hidden="true">
-                                            <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
-                                            <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
-                                            <path d="M10 9H8"></path>
-                                            <path d="M16 13H8"></path>
-                                            <path d="M16 17H8"></path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-xl">Financial Reporting &amp; Compliance</div>
-                                        <div class="text-sm text-muted-foreground mt-1">Transparent, institutional-grade reporting</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-3'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">We provide comprehensive monthly financial statements, variance analysis, and forward-looking projections. Our reporting meets institutional standards with full audit trails, compliance documentation, and detailed analytics that give investors complete transparency into portfolio performance.</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Monthly financial statements and variance analysis</li>
-                                    <li>Annual audited financials</li>
-                                    <li>Real-time investor portal access</li>
-                                    <li>Quarterly investor reports and presentations</li>
-                                    <li>Tax documentation and K-1 preparation</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-4' ? '' : 'item-4'" x-bind:aria-expanded="activeAccordion === 'item-4'"
-                                x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
-                                <div class="flex items-center gap-4 text-left">
-                                    <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-headphones h-6 w-6 text-white" aria-hidden="true">
-                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-xl">Tenant Services &amp; Experience</div>
-                                        <div class="text-sm text-muted-foreground mt-1">Premium resident experience delivery</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-4'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">We've built a tenant-first culture that prioritizes rapid response, clear communication, and community building. Our teams are empowered to resolve issues quickly and create living environments where residents want to stay long-term, driving both retention and organic referrals</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Average 48-hour maintenance response time</li>
-                                    <li>Online rent payment and service requests</li>
-                                    <li>Regular satisfaction surveys and feedback loops</li>
-                                    <li>Resident events and community programming</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="md:hidden">

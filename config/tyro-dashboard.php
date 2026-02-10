@@ -204,6 +204,15 @@ return [
                 'answer' => ['type' => 'richtext', 'label' => 'Answer', 'rules' => 'required'],
             ],
         ],
+        'questions' => [
+            'model' => 'App\Models\Question',
+            'title' => 'Questions',
+            'fields' => [
+                'title' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
+                'sub_title' => ['type' => 'text', 'label' => 'Sub Title', 'rules' => 'required'],
+                'description' => ['type' => 'richtext', 'label' => 'Description', 'rules' => 'required'],
+            ],
+        ],
     ],
 
     /*

@@ -10,6 +10,7 @@ use App\Models\FeatureClient;
 use App\Models\Faq;
 use App\Models\Project;
 use App\Models\News;
+use App\Models\Question;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,7 +25,9 @@ Route::get('/', function () {
         $projects = Project::latest()->take(3)->get();
     }
     $news = News::with('category')->where('status', true)->latest()->take(4)->get();
-    return view('home-page', compact('settings', 'featureClients', 'faqs', 'projects', 'news'));
+    $questions = Question::get();
+
+    return view('home-page', compact('settings', 'featureClients', 'faqs', 'projects', 'news','questions'));
 });
 Route::get('contact', [ContactController::class, 'contactPage'])->name('contact');
 Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
