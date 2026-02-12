@@ -199,7 +199,7 @@ return [
             'model' => 'App\Models\Faq',
             'title' => 'FAQ',
             'fields' => [
-                'page' => ['type' => 'select', 'label' => 'Page', 'rules' => 'required', 'options' => ['home', 'investment', 'construction','development', 'public-sector']],
+                'page' => ['type' => 'select', 'label' => 'Page', 'rules' => 'required', 'options' => ['home', 'investment', 'construction','development', 'public-sector','comminity-impact']],
                 'question' => ['type' => 'text', 'label' => 'Title', 'rules' => 'required'],
                 'answer' => ['type' => 'richtext', 'label' => 'Answer', 'rules' => 'required'],
             ],

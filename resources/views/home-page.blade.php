@@ -482,7 +482,7 @@
                 @foreach ($projects as $project)
                     <!-- Project Card -->
                     <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <div class="h-3/4 bg-gray-200 relative overflow-hidden">
                             @if ($project->image)
                                 <img src="{{ Storage::url($project->image) }}" alt="{{ $project->title }}"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">

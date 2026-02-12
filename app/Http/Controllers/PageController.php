@@ -34,7 +34,8 @@ class PageController extends Controller
 
     public function communityImpactPage()
     {
-        return view('community-impact');
+        $faqs = Faq::where('page','comminity-impact')->get();
+        return view('community-impact',compact('faqs'));
     }
 
     public function investmentManagementPage()
@@ -51,8 +52,8 @@ class PageController extends Controller
         $settings = Setting::where('group', 'like', 'construction_%')
             ->pluck('value', 'key')
             ->toArray();
-
-        return view('construction', compact('settings'));
+            $faqs = Faq::where('page','investment')->get();
+        return view('construction', compact('settings','faqs'));
     }
 
     public function publicSectorPage()
@@ -60,7 +61,7 @@ class PageController extends Controller
         $settings = Setting::where('group', 'like', 'public_sector_%')
             ->pluck('value', 'key')
             ->toArray();
-            $faqs = Faq::where('page','public_sector')->get();
+            $faqs = Faq::where('page','public-sector')->get();
 
         return view('public-sector', compact('settings', 'faqs'));
     }
@@ -70,8 +71,8 @@ class PageController extends Controller
         $settings = Setting::where('group', 'like', 'development_%')
             ->pluck('value', 'key')
             ->toArray();
-
-        return view('development', compact('settings'));
+            $faqs = Faq::where('page','development')->get();
+        return view('development', compact('settings','faqs'));
     }
 
     public function allProjectPage()

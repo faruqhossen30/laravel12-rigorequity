@@ -19,7 +19,7 @@ Route::get('/', function () {
         ->pluck('value', 'key')
         ->toArray();
     $featureClients = FeatureClient::select('name', 'logo')->get();
-    $faqs = Faq::all();
+    $faqs = Faq::where('page', 'home')->get();
     $projects = Project::where('status', 'Upcoming')->latest()->take(3)->get();
     if ($projects->isEmpty()) {
         $projects = Project::latest()->take(3)->get();
