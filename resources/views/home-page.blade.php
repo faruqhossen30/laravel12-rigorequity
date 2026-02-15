@@ -289,7 +289,7 @@
     <section class="py-24 bg-white" x-data="{ activeProject: null }">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Chicago Development Portfolio</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Chicago Construction Portfolio</h2>
                 <p class="text-xl text-gray-600">Our projects in Chicago reflect our commitment to quality construction, smart investment, and sustainable residential growth.</p>
             </div>
 
@@ -778,7 +778,7 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get Construction News & Insights Update</h2>
-                <p class="text-xl text-gray-600">Follow construction trends and project updates in Chicago, with expert insights from the Rigor Equity team.</p>
+                <p class="text-xl text-gray-600">Follow construction trends and project updates, with expert insights from the Rigor Equity team.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto mb-16">
