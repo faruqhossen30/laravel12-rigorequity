@@ -37,9 +37,9 @@ Route::get('terms-and-conditions', [PageController::class, 'termsAndConditionsPa
 Route::get('about', [PageController::class, 'aboutPage'])->name('about');
 Route::get('community-impact', [PageController::class, 'communityImpactPage'])->name('community-impact');
 Route::get('investment-management', [PageController::class, 'investmentManagementPage'])->name('invest-namagement');
-Route::get('construction', [PageController::class, 'constructionPage'])->name('construction');
+Route::get('construction-company', [PageController::class, 'constructionPage'])->name('construction');
 Route::get('public-sector', [PageController::class, 'publicSectorPage'])->name('public-sector');
-Route::get('development', [PageController::class, 'developmentPage'])->name('development');
+Route::get('residential-development', [PageController::class, 'developmentPage'])->name('development');
 Route::get('all-project', [PageController::class, 'allProjectPage'])->name('all-project');
 Route::get('news', [NewsController::class, 'index'])->name('news.index');
 Route::get('news/{slug}', [NewsController::class, 'show'])->name('news.show');

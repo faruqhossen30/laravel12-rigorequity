@@ -7,14 +7,20 @@
     <div class="relative w-full h-[600px] flex items-center justify-center bg-black text-white overflow-hidden">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="{{ $settings['development_hero_bg_image'] ?? 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2070&auto=format&fit=crop' }}" alt="Development Site" class="w-full h-full object-cover opacity-60">
+            <img src="{{ $settings['development_hero_bg_image'] ?? 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2070&auto=format&fit=crop' }}"
+                alt="Development Site" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div class="relative z-10 container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">{{ $settings['development_hero_title'] ?? 'Development' }}</h1>
             <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
-                {!! nl2br(e($settings['development_hero_description'] ?? 'Transforming land and opportunity into thriving communities and high-performing assets through strategic development expertise.')) !!}
+                {!! nl2br(
+                    e(
+                        $settings['development_hero_description'] ??
+                            'Transforming land and opportunity into thriving communities and high-performing assets through strategic development expertise.',
+                    ),
+                ) !!}
             </p>
             <a href="{{ $settings['development_hero_button_url'] ?? '/contact' }}"
                 class="inline-flex items-center justify-center px-8 py-3 bg-[#431499] text-white font-medium rounded-md hover:bg-[#35107a] transition-colors duration-200">
@@ -51,10 +57,20 @@
                 <div class="w-full lg:w-1/2">
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">{{ $settings['development_approach_title'] ?? 'Strategic Development Approach' }}</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        {!! nl2br(e($settings['development_approach_desc_1'] ?? 'At Rigor Equity, we take a disciplined, data-driven approach to real estate development. We identify emerging trends early, conduct rigorous due diligence, and execute with precision to deliver exceptional returns.')) !!}
+                        {!! nl2br(
+                            e(
+                                $settings['development_approach_desc_1'] ??
+                                    'At Rigor Equity, we take a disciplined, data-driven approach to real estate development. We identify emerging trends early, conduct rigorous due diligence, and execute with precision to deliver exceptional returns.',
+                            ),
+                        ) !!}
                     </p>
                     <p class="text-gray-600 mb-8 leading-relaxed">
-                        {!! nl2br(e($settings['development_approach_desc_2'] ?? 'Our development team combines deep local market knowledge with institutional-grade processes to de-risk projects and create lasting value for our investors and communities.')) !!}
+                        {!! nl2br(
+                            e(
+                                $settings['development_approach_desc_2'] ??
+                                    'Our development team combines deep local market knowledge with institutional-grade processes to de-risk projects and create lasting value for our investors and communities.',
+                            ),
+                        ) !!}
                     </p>
 
                     <div class="space-y-6">
@@ -89,8 +105,8 @@
 
                 <!-- Right Image -->
                 <div class="w-full lg:w-1/2">
-                    <img src="{{ $settings['development_approach_image'] ?? 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2089&auto=format&fit=crop' }}" alt="Development Blueprint"
-                        class="rounded-lg shadow-xl w-full h-auto object-cover grayscale">
+                    <img src="{{ $settings['development_approach_image'] ?? 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2089&auto=format&fit=crop' }}"
+                        alt="Development Blueprint" class="rounded-lg shadow-xl w-full h-auto object-cover grayscale">
                 </div>
             </div>
         </div>
@@ -237,8 +253,9 @@
     <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Operations & Asset Management</h2>
-                <p class="text-xl text-gray-600">Institutional quality operations across every aspect of the asset lifecycle.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Chicago Residential Development Company FAQ</h2>
+                <p class="text-xl text-gray-600">Frequently asked questions about our residential development process, site selection, zoning approvals, financing strategies, and
+                    project execution across Chicago, Illinois.</p>
             </div>
 
             <div class="max-w-4xl mx-auto space-y-4">
@@ -273,7 +290,9 @@
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">{{ $settings['development_cta_title'] ?? 'Partner on Your Next Development' }}</h2>
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    {!! nl2br(e($settings['development_cta_text'] ?? 'Whether you have a site, an idea, or capital to deploy, let\'s explore how we can collaborate on your next development project.')) !!}
+                    {!! nl2br(
+                        e($settings['development_cta_text'] ?? 'Whether you have a site, an idea, or capital to deploy, let\'s explore how we can collaborate on your next development project.'),
+                    ) !!}
                 </p>
                 <a href="{{ $settings['development_cta_button_url'] ?? '/contact' }}"
                     class="inline-flex items-center justify-center px-8 py-3 bg-[#340c7f] text-white font-medium rounded-md hover:bg-[#2a0966] transition-colors duration-200">

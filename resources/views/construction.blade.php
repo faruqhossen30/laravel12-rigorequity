@@ -164,8 +164,8 @@
     <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Operations & Asset Management</h2>
-                <p class="text-xl text-gray-600">Institutional quality operations across every aspect of the asset lifecycle.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Chicago Construction Company FAQ</h2>
+                <p class="text-xl text-gray-600">Answers to common questions about our construction services, project timelines, cost management, permitting process, and quality standards.</p>
             </div>
 
             <div class="max-w-4xl mx-auto space-y-4">

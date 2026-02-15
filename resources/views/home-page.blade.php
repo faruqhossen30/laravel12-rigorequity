@@ -230,10 +230,9 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-16 items-center max-w-6xl mx-auto">
                 <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">The Rigor Equity Platform</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Chicago Residential Construction Company FAQ</h2>
                     <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                        Our vertically integrated platform combines operational excellence with sustainable practices, delivering superior results across every aspect of real estate
-                        development and management.
+                        Common questions about our residential construction services, project management process, permits, timelines, and quality standards.
                     </p>
 
                     <div class="space-y-6" x-data="{ active: null }">
@@ -293,8 +292,8 @@
     <section class="py-24 bg-white" x-data="{ activeProject: null }">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Upcoming Projects</h2>
-                <p class="text-xl text-gray-600">Institutional-grade developments enhancing communities and delivering value.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Chicago Development Portfolio</h2>
+                <p class="text-xl text-gray-600">Our projects in Chicago reflect our commitment to quality construction, smart investment, and sustainable residential growth.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">

@@ -55,7 +55,7 @@
                     </svg>
                     Investment Management
                 </a>
-                <a href="/construction" class="flex items-center gap-2 transition-colors hover:text-primary">
+                <a href="{{ route('construction') }}" class="flex items-center gap-2 transition-colors hover:text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path
@@ -63,7 +63,7 @@
                     </svg>
                     Construction
                 </a>
-                <a href="/development" class="flex items-center gap-2 transition-colors hover:text-primary">
+                <a href="{{ route('development') }}" class="flex items-center gap-2 transition-colors hover:text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
@@ -156,7 +156,7 @@
                     </svg>
                     Investment Management
                 </a>
-                <a href="/construction" class="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
+                <a href="{{ route('construction') }}" class="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path

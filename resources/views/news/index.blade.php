@@ -10,8 +10,8 @@
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Home
             </a>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Insights & News</h1>
-            <p class="text-lg text-white/70 font-light max-w-2xl">Thought leadership, market intelligence, and industry insights from our team</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Get Construction News & Insights Update</h1>
+            <p class="text-lg text-white/70 font-light max-w-2xl">Follow construction trends and project updates in Chicago, with expert insights from the Rigor Equity team.</p>
         </div>
     </div>
 
