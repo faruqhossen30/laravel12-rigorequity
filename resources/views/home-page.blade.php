@@ -777,8 +777,8 @@
     <section class="py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Insights & News</h2>
-                <p class="text-xl text-gray-600">Thought leadership and market intelligence from our team.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get Construction News & Insights Update</h2>
+                <p class="text-xl text-gray-600">Follow construction trends and project updates in Chicago, with expert insights from the Rigor Equity team.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto mb-16">
