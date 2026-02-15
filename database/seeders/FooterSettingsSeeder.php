@@ -28,11 +28,11 @@ class FooterSettingsSeeder extends Seeder
                 'label' => 'Facebook URL',
             ],
             [
-                'key' => 'footer_social_twitter',
+                'key' => 'footer_social_linkedin',
                 'value' => '#',
                 'group' => 'footer_social',
                 'type' => 'text',
-                'label' => 'Twitter URL',
+                'label' => 'Linkedin URL',
             ],
             [
                 'key' => 'footer_social_instagram',

@@ -52,7 +52,7 @@ class PageController extends Controller
         $settings = Setting::where('group', 'like', 'construction_%')
             ->pluck('value', 'key')
             ->toArray();
-            $faqs = Faq::where('page','investment')->get();
+            $faqs = Faq::where('page','construction')->get();
         return view('construction', compact('settings','faqs'));
     }
 
