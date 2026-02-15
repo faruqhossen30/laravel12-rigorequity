@@ -140,13 +140,17 @@
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Investment Management</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">We manage real estate investments in Chicago to increase value through smart planning, careful oversight, and
-                        long-term growth strategies.</p>
-                    <a href="/investment-management" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">Learn
-                        more <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ $settings['homepage_service_1_title'] ?? 'Investment Management' }}</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        {{ $settings['homepage_service_1_description'] ?? 'We manage real estate investments in Chicago to increase value through smart planning, careful oversight, and long-term growth strategies.' }}
+                    </p>
+                    <a href="/investment-management"
+                        class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        {{ $settings['homepage_service_1_button_text'] ?? 'Learn more' }}
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg></a>
+                        </svg>
+                    </a>
                 </div>
                 <!-- Card 2 -->
                 <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
@@ -160,12 +164,17 @@
                             <path d="M12 2a10 10 0 0 1 10 10" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Construction</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">We plan and develop residential projects from start to finish, turning ideas into well-built communities.</p>
-                    <a href="/construction" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">Explore
-                        construction <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ $settings['homepage_service_2_title'] ?? 'Construction' }}</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        {{ $settings['homepage_service_2_description'] ?? 'We plan and develop residential projects from start to finish, turning ideas into well-built communities.' }}
+                    </p>
+                    <a href="/construction"
+                        class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        {{ $settings['homepage_service_2_button_text'] ?? 'Explore construction' }}
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg></a>
+                        </svg>
+                    </a>
                 </div>
                 <!-- Card 3 -->
                 <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
@@ -177,13 +186,17 @@
                             <line x1="9" y1="21" x2="9" y2="9" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Development</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Identifying and executing high-impact development opportunities in emerging urban submarkets with institutional
-                        quality execution.</p>
-                    <a href="/development" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">View projects
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ $settings['homepage_service_3_title'] ?? 'Development' }}</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        {{ $settings['homepage_service_3_description'] ?? 'Identifying and executing high-impact development opportunities in emerging urban submarkets with institutional quality execution.' }}
+                    </p>
+                    <a href="/development"
+                        class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        {{ $settings['homepage_service_3_button_text'] ?? 'View projects' }}
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg></a>
+                        </svg>
+                    </a>
                 </div>
                 <!-- Card 4 -->
                 <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
@@ -196,13 +209,17 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Public Sector</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Partnering with municipalities and public entities to deliver community-focused real estate solutions and economic
-                        development.</p>
-                    <a href="/public-sector" class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">Our approach
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ $settings['homepage_service_4_title'] ?? 'Public Sector' }}</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        {{ $settings['homepage_service_4_description'] ?? 'Partnering with municipalities and public entities to deliver community-focused real estate solutions and economic development.' }}
+                    </p>
+                    <a href="/public-sector"
+                        class="text-[#340c7f] font-semibold hover:underline inline-flex items-center group-hover:translate-x-1 transition-transform">
+                        {{ $settings['homepage_service_4_button_text'] ?? 'Our approach' }}
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg></a>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -250,205 +267,7 @@
 
     <!-- Operations Section -->
 
-    {{-- Start --}}
-    <section class="py-20 pt-10" x-data="{ activeAccordion: '' }">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16 transition-all duration-700 opacity-100 translate-y-0">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">Operations &amp; Asset Management</h2>
-                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Institutional-quality operations across every aspect of the asset lifecycle</p>
-            </div>
-            <div class="hidden md:block">
-                <div data-slot="accordion" class="transition-all duration-700 opacity-100 translate-y-0" data-orientation="vertical">
-                    @foreach ($questions as $question)
-                        <div x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                            class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
-                            <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" class="flex">
-                                <button type="button" @click="activeAccordion = activeAccordion === 'item-{{ $loop->iteration }}' ? '' : 'item-{{ $loop->iteration }}'" x-bind:aria-expanded="activeAccordion === 'item-{{ $loop->iteration }}'"
-                                    x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
-                                    <div class="flex items-center gap-4 text-left">
-                                        <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-check h-6 w-6 text-white" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-xl">{{$question->title}}</div>
-                                            <div class="text-sm text-muted-foreground mt-1">{{$question->sub_title}}</div>
-                                        </div>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                        <path d="m6 9 6 6 6-6"></path>
-                                    </svg>
-                                </button>
-                            </h3>
-                            <div x-show="activeAccordion === 'item-{{ $loop->iteration }}'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" role="region"
-                                data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm mb-2">
-                                {!! $question->description !!}
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="md:hidden">
-                <div data-slot="accordion" data-orientation="vertical">
-                    <div x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-1' ? '' : 'item-1'" x-bind:aria-expanded="activeAccordion === 'item-1'"
-                                x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
-                                <div class="flex items-center gap-3 text-left">
-                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-clipboard-check h-5 w-5 text-white" aria-hidden="true">
-                                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
-                                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                            <path d="m9 14 2 2 4-4"></path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-base">Property Management</div>
-                                        <div class="text-xs text-muted-foreground mt-0.5">24/7 tenant services and proactive oversight</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-1'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">Hands-on operational oversight with dedicated property management teams driving NOI growth and value creation.</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>24/7 Maintenance Support</li>
-                                    <li>Tenant Relations & Retention</li>
-                                    <li>Lease Administration</li>
-                                    <li>Vendor Management</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-2' ? '' : 'item-2'" x-bind:aria-expanded="activeAccordion === 'item-2'"
-                                x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
-                                <div class="flex items-center gap-3 text-left">
-                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-chart-line h-5 w-5 text-white" aria-hidden="true">
-                                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
-                                            <path d="m19 9-5 5-4-4-3 3"></path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-base">Asset Management</div>
-                                        <div class="text-xs text-muted-foreground mt-0.5">Data-driven performance optimization</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-2'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">Strategic planning and execution to maximize property value and investment returns throughout the ownership lifecycle.</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Capital Improvement Planning</li>
-                                    <li>Expense Management</li>
-                                    <li>Revenue Optimization</li>
-                                    <li>Market Analysis</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-3' ? '' : 'item-3'" x-bind:aria-expanded="activeAccordion === 'item-3'"
-                                x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
-                                <div class="flex items-center gap-3 text-left">
-                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5 text-white" aria-hidden="true">
-                                            <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
-                                            <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
-                                            <path d="M10 9H8"></path>
-                                            <path d="M16 13H8"></path>
-                                            <path d="M16 17H8"></path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-base">Financial Reporting &amp; Compliance</div>
-                                        <div class="text-xs text-muted-foreground mt-0.5">Transparent, institutional-grade reporting</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-3'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">Institutional-grade financial reporting providing transparency and accountability to all stakeholders.</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Monthly Financial Statements</li>
-                                    <li>Budgeting & Forecasting</li>
-                                    <li>Tax Preparation Support</li>
-                                    <li>Regulatory Compliance</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
-                        class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
-                        <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" class="flex">
-                            <button type="button" @click="activeAccordion = activeAccordion === 'item-4' ? '' : 'item-4'" x-bind:aria-expanded="activeAccordion === 'item-4'"
-                                x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
-                                class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
-                                <div class="flex items-center gap-3 text-left">
-                                    <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="lucide lucide-headphones h-5 w-5 text-white" aria-hidden="true">
-                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg></div>
-                                    <div>
-                                        <div class="text-base">Tenant Services &amp; Experience</div>
-                                        <div class="text-xs text-muted-foreground mt-0.5">Premium resident experience delivery</div>
-                                    </div>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                        </h3>
-                        <div x-show="activeAccordion === 'item-4'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" role="region"
-                            data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
-                            <div class="pb-4 pt-0 text-muted-foreground">
-                                <p class="mb-2">Creating vibrant communities through exceptional service and curated tenant experiences.</p>
-                                <ul class="list-disc pl-5 space-y-1">
-                                    <li>Community Events & Activations</li>
-                                    <li>Digital Tenant Portal</li>
-                                    <li>Concierge Services</li>
-                                    <li>Feedback & Satisfaction Surveys</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- End --}}
+
 
     <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -748,6 +567,206 @@
             </div>
         </div>
     </section>
+
+        {{-- Start --}}
+        <section class="py-20 pt-10" x-data="{ activeAccordion: '' }">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16 transition-all duration-700 opacity-100 translate-y-0">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">Operations & Asset Management</h2>
+                    <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Institutional-quality operations across every aspect of the asset lifecycle</p>
+                </div>
+                <div class="hidden md:block">
+                    <div data-slot="accordion" class="transition-all duration-700 opacity-100 translate-y-0" data-orientation="vertical">
+                        @foreach ($questions as $question)
+                            <div x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                                class="border border-gray-200 rounded-lg mb-4 px-6 bg-white hover:shadow-md transition-shadow">
+                                <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" class="flex">
+                                    <button type="button" @click="activeAccordion = activeAccordion === 'item-{{ $loop->iteration }}' ? '' : 'item-{{ $loop->iteration }}'" x-bind:aria-expanded="activeAccordion === 'item-{{ $loop->iteration }}'"
+                                        x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                        class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-6">
+                                        <div class="flex items-center gap-4 text-left">
+                                            <div class="bg-[#2e099a] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-check h-6 w-6 text-white" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-xl">{{$question->title}}</div>
+                                                <div class="text-sm text-muted-foreground mt-1">{{$question->sub_title}}</div>
+                                            </div>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                            <path d="m6 9 6 6 6-6"></path>
+                                        </svg>
+                                    </button>
+                                </h3>
+                                <div x-show="activeAccordion === 'item-{{ $loop->iteration }}'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-{{ $loop->iteration }}' ? 'open' : 'closed'" role="region"
+                                    data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm mb-2">
+                                    {!! $question->description !!}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <div data-slot="accordion" data-orientation="vertical">
+                        <div x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                            class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                            <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" class="flex">
+                                <button type="button" @click="activeAccordion = activeAccordion === 'item-1' ? '' : 'item-1'" x-bind:aria-expanded="activeAccordion === 'item-1'"
+                                    x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                    <div class="flex items-center gap-3 text-left">
+                                        <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" class="lucide lucide-clipboard-check h-5 w-5 text-white" aria-hidden="true">
+                                                <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                                <path d="m9 14 2 2 4-4"></path>
+                                            </svg></div>
+                                        <div>
+                                            <div class="text-base">Property Management</div>
+                                            <div class="text-xs text-muted-foreground mt-0.5">24/7 tenant services and proactive oversight</div>
+                                        </div>
+                                    </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div x-show="activeAccordion === 'item-1'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-1' ? 'open' : 'closed'" role="region"
+                                data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                                <div class="pb-4 pt-0 text-muted-foreground">
+                                    <p class="mb-2">Hands-on operational oversight with dedicated property management teams driving NOI growth and value creation.</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>24/7 Maintenance Support</li>
+                                        <li>Tenant Relations & Retention</li>
+                                        <li>Lease Administration</li>
+                                        <li>Vendor Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                            class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                            <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" class="flex">
+                                <button type="button" @click="activeAccordion = activeAccordion === 'item-2' ? '' : 'item-2'" x-bind:aria-expanded="activeAccordion === 'item-2'"
+                                    x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                    <div class="flex items-center gap-3 text-left">
+                                        <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" class="lucide lucide-chart-line h-5 w-5 text-white" aria-hidden="true">
+                                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                                <path d="m19 9-5 5-4-4-3 3"></path>
+                                            </svg></div>
+                                        <div>
+                                            <div class="text-base">Asset Management</div>
+                                            <div class="text-xs text-muted-foreground mt-0.5">Data-driven performance optimization</div>
+                                        </div>
+                                    </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div x-show="activeAccordion === 'item-2'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-2' ? 'open' : 'closed'" role="region"
+                                data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                                <div class="pb-4 pt-0 text-muted-foreground">
+                                    <p class="mb-2">Strategic planning and execution to maximize property value and investment returns throughout the ownership lifecycle.</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Capital Improvement Planning</li>
+                                        <li>Expense Management</li>
+                                        <li>Revenue Optimization</li>
+                                        <li>Market Analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                            class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                            <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" class="flex">
+                                <button type="button" @click="activeAccordion = activeAccordion === 'item-3' ? '' : 'item-3'" x-bind:aria-expanded="activeAccordion === 'item-3'"
+                                    x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                    <div class="flex items-center gap-3 text-left">
+                                        <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5 text-white" aria-hidden="true">
+                                                <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
+                                                <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                                                <path d="M10 9H8"></path>
+                                                <path d="M16 13H8"></path>
+                                                <path d="M16 17H8"></path>
+                                            </svg></div>
+                                        <div>
+                                            <div class="text-base">Financial Reporting &amp; Compliance</div>
+                                            <div class="text-xs text-muted-foreground mt-0.5">Transparent, institutional-grade reporting</div>
+                                        </div>
+                                    </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div x-show="activeAccordion === 'item-3'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-3' ? 'open' : 'closed'" role="region"
+                                data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                                <div class="pb-4 pt-0 text-muted-foreground">
+                                    <p class="mb-2">Institutional-grade financial reporting providing transparency and accountability to all stakeholders.</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Monthly Financial Statements</li>
+                                        <li>Budgeting & Forecasting</li>
+                                        <li>Tax Preparation Support</li>
+                                        <li>Regulatory Compliance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-item"
+                            class="border border-gray-200 rounded-lg mb-3 px-4 bg-white">
+                            <h3 data-orientation="vertical" x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" class="flex">
+                                <button type="button" @click="activeAccordion = activeAccordion === 'item-4' ? '' : 'item-4'" x-bind:aria-expanded="activeAccordion === 'item-4'"
+                                    x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" data-orientation="vertical" data-slot="accordion-trigger"
+                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 hover:no-underline py-4">
+                                    <div class="flex items-center gap-3 text-left">
+                                        <div class="bg-[#2e099a] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" class="lucide lucide-headphones h-5 w-5 text-white" aria-hidden="true">
+                                                <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                                                </path>
+                                            </svg></div>
+                                        <div>
+                                            <div class="text-base">Tenant Services &amp; Experience</div>
+                                            <div class="text-xs text-muted-foreground mt-0.5">Premium resident experience delivery</div>
+                                        </div>
+                                    </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div x-show="activeAccordion === 'item-4'" x-collapse x-cloak x-bind:data-state="activeAccordion === 'item-4' ? 'open' : 'closed'" role="region"
+                                data-orientation="vertical" data-slot="accordion-content" class="overflow-hidden text-sm">
+                                <div class="pb-4 pt-0 text-muted-foreground">
+                                    <p class="mb-2">Creating vibrant communities through exceptional service and curated tenant experiences.</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Community Events & Activations</li>
+                                        <li>Digital Tenant Portal</li>
+                                        <li>Concierge Services</li>
+                                        <li>Feedback & Satisfaction Surveys</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{-- End --}}
 
     <!-- News Section -->
     <section class="py-24 bg-white">

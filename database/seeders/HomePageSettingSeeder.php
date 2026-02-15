@@ -39,7 +39,7 @@ class HomePageSettingSeeder extends Seeder
             // Homepage Hero
             [
                 'key' => 'homepage_hero_title',
-                'value' => 'Integrated Solutions.<br>Lasting Impact. Test',
+                'value' => 'Integrated Solutions.<br>Lasting Impact.',
                 'group' => 'homepage_hero',
                 'label' => 'Hero Title (Supports HTML)',
                 'type' => 'text',
@@ -97,6 +97,97 @@ class HomePageSettingSeeder extends Seeder
             ],
 
             // Homepage Services
+            [
+                'key' => 'homepage_services_title',
+                'value' => 'Vertically Integrated to Deliver Value',
+                'group' => 'homepage_services',
+                'label' => 'Services Section Title',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_1_title',
+                'value' => 'Investment Management',
+                'group' => 'homepage_services',
+                'label' => 'Service 1 Title (Investment Management)',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_1_description',
+                'value' => 'We manage real estate investments in Chicago to increase value through smart planning, careful oversight, and long-term growth strategies.',
+                'group' => 'homepage_services',
+                'label' => 'Service 1 Description',
+                'type' => 'textarea',
+            ],
+            [
+                'key' => 'homepage_service_1_button_text',
+                'value' => 'Learn more',
+                'group' => 'homepage_services',
+                'label' => 'Service 1 Button Text',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_2_title',
+                'value' => 'Construction',
+                'group' => 'homepage_services',
+                'label' => 'Service 2 Title (Construction)',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_2_description',
+                'value' => 'We plan and develop residential projects from start to finish, turning ideas into well-built communities.',
+                'group' => 'homepage_services',
+                'label' => 'Service 2 Description',
+                'type' => 'textarea',
+            ],
+            [
+                'key' => 'homepage_service_2_button_text',
+                'value' => 'Explore construction',
+                'group' => 'homepage_services',
+                'label' => 'Service 2 Button Text',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_3_title',
+                'value' => 'Development',
+                'group' => 'homepage_services',
+                'label' => 'Service 3 Title (Development)',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_3_description',
+                'value' => 'Identifying and executing high-impact development opportunities in emerging urban submarkets with institutional quality execution.',
+                'group' => 'homepage_services',
+                'label' => 'Service 3 Description',
+                'type' => 'textarea',
+            ],
+            [
+                'key' => 'homepage_service_3_button_text',
+                'value' => 'View projects',
+                'group' => 'homepage_services',
+                'label' => 'Service 3 Button Text',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_4_title',
+                'value' => 'Public Sector',
+                'group' => 'homepage_services',
+                'label' => 'Service 4 Title (Public Sector)',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'homepage_service_4_description',
+                'value' => 'Partnering with municipalities and public entities to deliver community-focused real estate solutions and economic development.',
+                'group' => 'homepage_services',
+                'label' => 'Service 4 Description',
+                'type' => 'textarea',
+            ],
+            [
+                'key' => 'homepage_service_4_button_text',
+                'value' => 'Our approach',
+                'group' => 'homepage_services',
+                'label' => 'Service 4 Button Text',
+                'type' => 'text',
+            ],
         ];
 
         foreach ($settings as $setting) {
